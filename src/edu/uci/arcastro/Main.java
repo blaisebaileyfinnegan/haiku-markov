@@ -15,12 +15,9 @@ public class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 		System.out.print("Reading dictionaries from file...");
 		
-		Dictionary.LoadSyllableDictionary(
-			"syllables.txt");
-		Dictionary.LoadPOSDictionary(
-			"part-of-speech.txt");
-		Parser.TrainWithCorpus(
-			"big.txt");
+		Dictionary.LoadSyllableDictionary("syllables.txt");
+		Dictionary.LoadPOSDictionary("part-of-speech.txt");
+		Parser.TrainWithCorpus("big.txt");
 		
 		System.out.println("Done");
 		System.out.println("Enter a syllable number: ");

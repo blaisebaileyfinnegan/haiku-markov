@@ -67,7 +67,7 @@ public class Parser
 			Word w2 = words.get(i+1);
 			if (w2 == null) continue;
 			
-			Integer count = w1.CollocatedAfter.get(w1);
+			Integer count = w1.CollocatedAfter.get(w2);
 			if(count ==null) w1.CollocatedAfter.put(w2, (count = new Integer(1)));
 			else count++;
 			
