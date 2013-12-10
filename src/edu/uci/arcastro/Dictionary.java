@@ -80,13 +80,13 @@ public class Dictionary
 				if(c == 'o') pos = POS.Nominative;
 				if(pos != POS.Unknown)
 				{
+					word.PartsOfSpeech.remove(POS.Unknown);
 					word.PartsOfSpeech.add(pos);
 					if(!PartOfSpeechDictionary.containsKey(pos))
 						PartOfSpeechDictionary.put(pos, new ArrayList<Word>());
 					PartOfSpeechDictionary.get(pos).add(word);
 				}
 			}
-			//TODO: Add Enumset of POS dictionary.
 		}
 		s.close();
 	}
