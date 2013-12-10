@@ -19,10 +19,6 @@ public class Main {
 		System.out.println("Done");
 		
 		System.out.print("Enter a word: ");
-		//Given a number
-		//Find a random, frequent word of that many syllables
-		//And print the word, along with its POS and associated words.
-		Random r = new Random();
 		Scanner s = new Scanner(System.in);
 		while(s.hasNextLine())
 		{
