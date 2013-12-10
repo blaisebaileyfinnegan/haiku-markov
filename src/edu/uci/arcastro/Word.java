@@ -1,6 +1,7 @@
 package edu.uci.arcastro;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.HashMap;
 
 
@@ -9,11 +10,11 @@ public class Word
 	public final String spelling;
 	public int syllables;
 	public int frequency;
+	public EnumSet<POS> PartsOfSpeech;
 	public final HashMap<Word, Integer> CollocatedBefore;
 	public final HashMap<Word, Integer> CollocatedAfter;
 	public final HashMap<Word, Integer> Associated;
 	public final ArrayList<Word> Rhyme;
-	public final ArrayList<POS> PartsOfSpeech;
 	public Word(String spelling)
 	{
 		this.syllables = 0;
@@ -23,7 +24,7 @@ public class Word
 		this.CollocatedAfter = new HashMap<Word, Integer>();
 		this.Associated = new HashMap<Word, Integer>();
 		this.Rhyme = new ArrayList<Word>();
-		this.PartsOfSpeech = new ArrayList<POS>();
+		PartsOfSpeech = EnumSet.of(POS.Unknown);
 	}
 	
 	public String spelling() {
@@ -46,8 +47,5 @@ public class Word
 	}
 	public ArrayList<Word> Rhyme(){
 		return Rhyme;
-	}
-	public ArrayList<POS> PartsOfSpeech(){
-		return PartsOfSpeech;
 	}
 }

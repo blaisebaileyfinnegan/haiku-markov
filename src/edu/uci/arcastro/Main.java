@@ -16,7 +16,7 @@ public class Main {
 		System.out.print("Reading dictionaries from file...");
 		
 		Dictionary.LoadSyllableDictionary("syllables.txt");
-		Dictionary.LoadPOSDictionary("part-of-speech.txt");
+		Dictionary.LoadPOSDictionary("part-of-speech_UPDATED.txt");
 		Parser.TrainWithCorpus("big.txt");
 		
 		System.out.println("Done");
