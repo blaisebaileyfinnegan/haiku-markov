@@ -13,7 +13,7 @@ public class Parser
 		ArrayList<String> sentence = new ArrayList<String>();
 		while(s.hasNext())
 		{
-			String spelling = s.next().replace("[\",\\,]", "");
+			String spelling = s.next().toUpperCase().replace("[\",\\,]", "");//get rid of apostraphes, commas, quotes, etc.
 			boolean endOfSentence = false;
 			while(spelling.endsWith(".") || spelling.endsWith("?") || spelling.endsWith("!") || spelling.endsWith(";"))
 			{

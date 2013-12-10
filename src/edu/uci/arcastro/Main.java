@@ -15,12 +15,9 @@ public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		System.out.print("Reading dictionaries from file...");
-		
-		Dictionary.LoadSyllableDictionary("syllables.txt");
-		Dictionary.LoadPOSDictionary("part-of-speech_UPDATED.txt");
-		Parser.TrainWithCorpus("big.txt");
-		
+		Global.Initialize();
 		System.out.println("Done");
+		
 		System.out.print("Enter a word: ");
 		//Given a number
 		//Find a random, frequent word of that many syllables
@@ -29,7 +26,7 @@ public class Main {
 		Scanner s = new Scanner(System.in);
 		while(s.hasNextLine())
 		{
-			String word_spelling = s.nextLine();
+			String word_spelling = s.nextLine().toUpperCase();
 			if(!Dictionary.Words.containsKey(word_spelling))
 			{
 				System.out.println("No word with that exact spelling was found.");

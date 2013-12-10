@@ -15,6 +15,7 @@ public class Word
 	public final HashMap<Word, Integer> CollocatedAfter;
 	public final HashMap<Word, Integer> Associated;
 	public final ArrayList<Word> Rhyme;
+	public int sentiment;
 	public Word(String spelling)
 	{
 		this.syllables = 0;
@@ -32,6 +33,9 @@ public class Word
 	}
 	public int syllables(){
 		return syllables;
+	}
+	public int sentiment(){
+		return sentiment;
 	}
 	public int frequency(){
 		return frequency;
