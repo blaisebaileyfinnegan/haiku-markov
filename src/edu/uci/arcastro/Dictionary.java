@@ -13,6 +13,8 @@ public class Dictionary
 			new HashMap<String, Word>();
 	public static HashMap<Integer, ArrayList<Word>> SyllableDictionary = 
 			new HashMap<Integer, ArrayList<Word>>();
+	public static HashMap<String, Integer> SyllableLookup = 
+			new HashMap<String, Integer>();
 	public static HashMap<POS, ArrayList<Word>> PartOfSpeechDictionary = 
 			new HashMap<POS, ArrayList<Word>>();
 	
@@ -34,13 +36,7 @@ public class Dictionary
 			String word_spelling = parts[0];
 			int syllables = Integer.parseInt(parts[1]);
 			
-			if(!SyllableDictionary.containsKey(syllables))
-				SyllableDictionary.put(syllables, new ArrayList<Word>());
-			
-			Word word = getWord(word_spelling);
-			word.syllables = syllables;
-			
-			SyllableDictionary.get(syllables).add(word);
+			SyllableLookup.put(word_spelling, syllables);
 		}
 		s.close();
 	}
@@ -52,14 +48,21 @@ public class Dictionary
 		{
 			String line = s.nextLine();
 			String[] parts = line.split("\t");
-			String word_spelling = parts[0].toUpperCase();
+			String word_spelling = parts[0];
 			char[] POS_text = parts[1].toCharArray();
 			
-			if(!Words.containsKey(word_spelling)) continue;
-			Word word = Words.get(word_spelling);
+			Word word = getWord(word_spelling);
+			if(SyllableLookup.containsKey(word_spelling.toUpperCase()))
+			{
+				Integer syllableCount = SyllableLookup.get(word_spelling.toUpperCase());
+				word.syllables = syllableCount;
+				if(!SyllableDictionary.containsKey(syllableCount))
+						SyllableDictionary.put(syllableCount, new ArrayList<Word>());
+				SyllableDictionary.get(syllableCount).add(word);
+			}
 			for(char c : POS_text)
 			{
-				POS pos = null;
+				POS pos = POS.Unknown;
 				if(c == 'N') pos = POS.Noun;
 				if(c == 'P') pos = POS.Plural;
 				if(c == 'h') pos = POS.Noun_Phrase;
@@ -75,7 +78,7 @@ public class Dictionary
 				if(c == 'D') pos = POS.Definite_Article;
 				if(c == 'I') pos = POS.Indefinite_Article;
 				if(c == 'o') pos = POS.Nominative;
-				if(pos != null)
+				if(pos != POS.Unknown)
 				{
 					word.PartsOfSpeech.add(pos);
 					if(!PartOfSpeechDictionary.containsKey(pos))
@@ -83,6 +86,7 @@ public class Dictionary
 					PartOfSpeechDictionary.get(pos).add(word);
 				}
 			}
+			//TODO: Add Enumset of POS dictionary.
 		}
 		s.close();
 	}

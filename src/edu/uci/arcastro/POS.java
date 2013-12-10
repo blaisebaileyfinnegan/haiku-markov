@@ -3,6 +3,7 @@ package edu.uci.arcastro;
 
 public enum POS
 {
+	Unknown,
 	Noun,
 	Plural,
 	Noun_Phrase,
