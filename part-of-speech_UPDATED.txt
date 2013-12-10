@@ -37606,6 +37606,7 @@ PB	N
 PC	N
 PCA	N
 PD	N
+PDA	N
 PE	N
 PEDir	N
 PEI	N
@@ -60214,6 +60215,7 @@ animadversional	A
 animadvert	iV
 animadverter	N
 animal	NA
+animals	NA
 animal black	h
 animal communication	|h
 animal cracker	h
@@ -70645,6 +70647,7 @@ beduin	|N
 bedward	v
 bedwarmer	N
 bee	N
+bees	N
 bee balm	h
 bee beetle	h
 bee bird	h
@@ -72831,6 +72834,7 @@ birchbark	|N
 birchbark canoe	|h
 birchen	A
 bird	NV
+birds	NV
 bird call	h
 bird cherry	h
 bird cherry tree	|h
@@ -77426,6 +77430,7 @@ brineless	A
 brinell number	|h
 briner	N
 bring	V
+brings	V
 bring about	tV
 bring around	|V
 bring back	|V
@@ -79124,6 +79129,7 @@ burro deer	|h
 burros	p
 burrow	NVi
 burrower	N
+burrowing	V
 burrowing blenny	h
 burrowing owl	h
 burrstone	N
@@ -79472,6 +79478,7 @@ butterflied	NV
 butterflies	p
 butterflower	|N
 butterfly	N
+butterflies	N
 butterfly bomb	h
 butterfly bush	h
 butterfly chair	h
@@ -83845,6 +83852,7 @@ caterer	N
 catering	N
 cateringly	v
 caterpillar	NA
+caterpillars	NA
 caterpillar gate	h
 caterpillar hunter	h
 caterpillar tracks	|h
@@ -99773,6 +99781,7 @@ cryptozygous	A
 cryptozygy	N
 cryst	N
 crystal	NA
+crystals	NA
 crystal ball	h
 crystal class	h
 crystal clear	|A
@@ -103345,6 +103354,7 @@ deemphasize	|V
 deemster	N
 deemstership	N
 deep	ANv
+deepest	ANv
 deep brown	|h
 deep cervical vein	|h
 deep down	|v
@@ -105375,6 +105385,7 @@ desirable	AN
 desirableness	N
 desirably	v
 desire	tNV
+desires	tNV
 desire to know	|h
 desired	A
 desiredly	v
@@ -111478,6 +111489,7 @@ dromedary	N
 dromond	N
 dromos	N
 drone	NiV
+drones	NiV
 drone on	|V
 drone pipe	|h
 droned	V
@@ -111916,6 +111928,7 @@ duchies	p
 duchy	N
 duci	p
 duck	NVi
+ducks	NVi
 duck and drake	h
 duck foot	h
 duck hawk	h
@@ -123607,6 +123620,7 @@ feedstuff	N
 feedwater	N
 feeing	V
 feel	VtiN
+feels	VtiN
 feel for	|V
 feel like	|V
 feel out	|V
@@ -124959,6 +124973,7 @@ finca	N
 fincas	p
 finch	N
 find	VN
+finds	VN
 find fault	|V
 find fault with	|V
 find oneself	|V
@@ -131105,6 +131120,7 @@ gamelike	A
 gamely	v
 gameness	N
 gamer	NA
+gamers	NA
 games master	h
 games theory	h
 games-master	|N
@@ -141995,6 +142011,7 @@ haik	N
 haikai	p
 haikal	N
 haiku	N
+haikus	N
 haikwan tael	h
 hail	NiVt!
 hail mary	|h
@@ -146158,6 +146175,7 @@ hiddenite	N
 hiddenly	v
 hiddenness	N
 hide	VtN
+hides	VtN
 hide and go seek	|h
 hide out	|V
 hide-and-seek	N
@@ -151236,6 +151254,7 @@ idcue	N
 iddhi	N
 ide	N
 idea	N
+ideas	N
 idea man	h
 idea of reference	h
 ideaful	A
@@ -160692,6 +160711,7 @@ jumby tree	|h
 jument	|N
 jumentous	|A
 jump	itNV
+jumps	V
 jump at	i
 jump ball	h
 jump bid	h
@@ -162412,6 +162432,7 @@ kitsch	NA
 kitted	V
 kittel	N
 kitten	NV
+kittens	NV
 kitten-tails	|N
 kittenish	A
 kittenishly	v
@@ -165094,6 +165115,7 @@ leachiest	A
 leaching	|N
 leachy	A
 lead	ViNt
+leads	ViNt
 lead acetate	h
 lead arsenate	h
 lead astray	|V
@@ -166182,6 +166204,7 @@ lestobiotic	A
 lesvos	|N
 lesya	N
 let	VN
+lets	VN
 let alone	|v
 let down	thV
 let drive	|V
@@ -166872,6 +166895,7 @@ lifesaving	AN
 lifespan	|N
 lifestyle	|N
 lifetime	N
+lifetimes	N
 lifework	N
 lift	VNti
 lift bolt	h
@@ -167277,6 +167301,7 @@ limitableness	N
 limitarian	N
 limitary	A
 limitation	N
+limitations	N
 limitative	A
 limited	AN
 limited audit	|h
@@ -169142,6 +169167,7 @@ loofa	N
 loofah	N
 looie	N
 look	VtN
+looks	VtN
 look across	|V
 look after	iV
 look around	|V
@@ -172371,6 +172397,7 @@ manufacturable	A
 manufactural	A
 manufacture	VtN
 manufactured	VA
+manufactures	VN
 manufacturer	N
 manufacturer's agent	h
 manufacturing	VN
@@ -174581,6 +174608,7 @@ memorized	t
 memorizer	N
 memorizing	t
 memory	N
+memories	N
 memory access	|h
 memory bank	h
 memory board	|h
@@ -179029,6 +179057,7 @@ moolah	N
 moolvee	N
 moolvie	N
 moon	NV
+moons	NV
 moon about	|V
 moon around	|V
 moon blindness	h
@@ -182165,6 +182194,7 @@ naturalizing	V
 naturally	v
 naturalness	|N
 nature	N
+natures	N
 nature philosopher	h
 nature philosophy	h
 nature strip	h
@@ -194572,6 +194602,7 @@ opportunistic infection	|h
 opportunistically	v
 opportunities	p
 opportunity	N
+opportunities	N
 opportunity cost	h
 opposability	N
 opposable	A
@@ -212021,6 +212052,7 @@ pounder	N
 pounding	|N
 pounds per square inch	|h
 pour	VtiN
+pours	VtiN
 pour down	|V
 pour forth	|V
 pour le marite	h
@@ -220232,6 +220264,7 @@ pus	N
 pusan	|N
 puseyism	|N
 push	VtiN
+pushes	VtiN
 push about	t
 push along	i
 push around	|V
@@ -229643,6 +229676,7 @@ retuned	t
 retuning	t
 returf	t
 return	itNV
+returns	itNV
 return address	|h
 return crease	h
 return key	|h
@@ -231786,6 +231820,7 @@ rooseveltian	|A
 roosing	ti
 roost	NiV
 rooster	N
+roosters	N
 root	NitVA
 root beer	h
 root beer float	|h
@@ -231906,6 +231941,7 @@ rosary	N
 rosary pea	h
 roscoelite	N
 rose	NtVA
+roses	NtVA
 rose acacia	h
 rose apple	h
 rose bay	|h
@@ -243293,6 +243329,7 @@ singleton	N
 singletree	N
 singling	AV
 singly	v
+sings	V
 singsong	NAV
 singspiel	N
 singular	AN
@@ -244968,6 +245005,7 @@ smilax	N
 smilax aspera	|h
 smilax rotundifolia	|h
 smile	NitV
+smiles	NitV
 smiled	V
 smiledon	|N
 smiledon californicus	|h
@@ -245561,6 +245599,7 @@ snowdrop windflower	h
 snowfall	N
 snowfield	N
 snowflake	N
+snowflakes	N
 snowier	A
 snowiest	A
 snowily	v
@@ -249823,6 +249862,7 @@ staid	A
 staidly	v
 staidness	N
 stain	ViN
+stains	ViN
 stainability	N
 stainable	A
 stainableness	N
@@ -258358,6 +258398,7 @@ syllabize	tV
 syllabized	t
 syllabizing	t
 syllable	NVt
+syllables	N
 syllable structure	|h
 syllabled	VA
 syllabling	V
@@ -268382,6 +268423,7 @@ tule perch	h
 tules	p
 tulestoma	|N
 tulip	N
+tulips	N
 tulip bed	|h
 tulip gentian	|h
 tulip orchid	|h
@@ -288476,6 +288518,7 @@ wannest	A
 wanning	A
 wannish	A
 want	tNiV
+wants	tNiV
 want ad	h
 want list	h
 wantage	NP
@@ -291742,6 +291785,7 @@ widget	N
 widgie	N
 widish	A
 widow	NtV
+widows	NV
 widow bird	h
 widow woman	|h
 widow's benefit	h
@@ -291964,6 +292008,7 @@ wilder	V
 wilderness	N
 wilderness campaign	|h
 wildfire	N
+wildfires	N
 wildflower	|N
 wildfowl	N
 wilding	N
@@ -292173,6 +292218,7 @@ windlestraw	N
 windmill	NVi
 windmill grass	|h
 window	Nt
+windows	Nt
 window back	h
 window blind	|h
 window board	h
@@ -295170,3 +295216,303 @@ zymosis	N
 zymotic	|A
 zymurgy	|N
 zyrian	|N
+mans	N!VtA
+blows	NVti
+pads	NVt
+holes	NV
+drops	NV
+students	N
+closes	NVtiAv
+remnants	NA
+keeps	VtN
+parents	NV
+shuts	VtAN
+descends	V
+mens	N
+mouths	NVti
+pigeons	N
+sparrows	N
+squirrels	N
+limbs	NV
+draws	Vit
+grows	NVi
+fades	ViN
+drains	NtiV
+sounds	NVitAv
+soldiers	NiV
+panes	N
+lists	NtV
+crickets	NiV
+paces	NVtiP
+candles	NtV
+curls	itNV
+shoulders	NtV
+brides	N
+spits	Vit
+trees	NtV
+departs	Vt
+thinks	VitN
+shines	VitN
+arrives	iV
+thoughts	VN
+blocks	NVi
+drips	VN
+starts	VitN
+others	NDrvA
+clowns	NiV
+dragons	N
+skies	NV
+degrees	NA
+bins	NV
+vacations	NiV
+seashells	N
+items	NVtv
+poems	N
+rocks	NVti
+cats	NV
+annoys	V
+ripples	NitAV
+tens	ND
+coffins	NtV
+arias	N
+fools	NtiAV
+kills	VN
+avoids	Vt
+houses	NVt
+fireplaces	N
+sits	Vt
+answers	NVti
+needs	VtN
+needings	VtN
+shimmers	iNV
+needing	VtN
+avoiding	Vt
+stifles	tNV
+classes	NV
+bares	AtV
+seeds	NVit
+reaches	tNiV
+stars	NVA
+melts	VN
+blankets	NVA
+seasons	NVt
+senses	NVt
+hovers	iNV
+rises	NVt
+friends	Nt
+attachments	N
+overlooks	VtN
+typewriters	N
+blades	N
+keys	NtVA
+samurais	N
+having	VN
+yesterdays	Nv
+slows	AvV
+seems	NV
+takes	ViN
+heartbeats	N
+emerges	iV
+follows	VtN
+saddest	NAV
+waits	NVi
+months	N
+wanderers	N
+crisscrossing	VANv
+arrows	N
+flows	VtN
+soars	iNV
+walks	iNtV
+floods	NViA
+flats	AvNVi
+boundaries	N
+breezes	NiV
+gales	N
+fills	VN
+flies	VitNA
+swallows	ViN
+strings	NV
+strains	NVit
+tides	iNV
+lifts	VNti
+blackberries	NV
+songs	N
+parishioners	N
+ends	NtV
+envelops	tV
+floats	VtN
+spiders	N
+spends	Vti
+lands	NVitA
+feathers	NtiV
+borrowed	NVi
+addictions	N
+knocks	tiNV
+votes	NVt
+webs	NtiV
+troughs	N
+shifts	VtiN
+chirps	iNV
+guides	NVt
+glows	NiV
+crows	NiV
+rides	VtiN
+chirping	iNV
+mega	A
+Suzuki	N
+Linux	N
+shells	NVtA
+churches	NtV
+afghans	NA
+chants	NV
+beckons	VN
+hangs	VNit
+echoes	NV
+mountains	NA
+peaks	NtiVA
+mobsters	N
+chessboards	N
+seagulls	N
+rests	NVti
+gives	ViN
+giving	ViN
+decades	N
+fleets	NAitV
+shouts	NVit
+encounters	VtN
+points	NtVi
+reflects	Vti
+glides	ViN
+fits	NVA
+touches	!NtiV
+occurs	V
+raincoats	N
+girls	N
+coyotes	N
+seconds	ANtvV
+beans	NVt
+moments	N
+hectoring	NV
+messages	Nt
+claimed	VN
+killed	VN
+drives	VNti
+snows	NVti
+cracks	VtiNA
+oversees	V
+shouts	NVit
+lights	NAVvi
+forgets	Vt
+breaks	VtiN!
+monkeys	NVti
+smells	VitN
+moves	VNit
+guys	NtV
+catches	VtiN
+calls	NVti
+knees	NV
+hits	AVN
+grandfathers	N
+sisters	NA
+sets	NViA
+looms	NiV
+cages	NiV
+petals	N
+cools	AvNV
+thumps	NtiV
+drifts	VN
+hotdogs	N
+droplets	N
+twirls	VtiN
+reflections	N
+kimonos	N
+chickens	NA
+treading	VitN
+machines	NtV
+tubes	NtV
+awakens	tiV
+flashes	NtAVi
+makes	ViN
+twirling	VtiN
+snacks	N
+increases	VN
+flames	NVit
+cars	N
+likes	VAPvCNt
+pebbles	N
+classrooms	N
+looked	APvCNT
+strums	VN
+lilies	N
+ashes	NV
+thorns	N
+loves	NtiV
+curves	NV
+writes	Vti
+mothers	NtV
+dwells	Vn
+cranes	NVti
+Dalai	N
+yum	AN!
+pans	NAV
+meanings	NA
+lines	NtV
+decides	Vti
+taboos	ANV
+exceptions	N
+frets	VitN
+playgrounds	N
+sensations	N
+dims	AV
+deserves	tiV
+spikes	NtV
+grasses	NVt
+remarked	VtN
+remarks	VtN
+sneaks	itNVA
+neighbors	NVA
+gophers	N
+sitters	N
+throws	VN
+computers	N
+lies	NVi
+fingers	NtiV
+wonders	NV
+searches	VtN
+swallowing	ViN
+honeybees	N
+oceans	N
+lips	NV
+kissed	tiNV
+ants	NA
+valleys	N
+guards	VtiN
+moors	NV
+silhouettes	NtV
+searchlights	N
+drowning	Vt
+snowing	NitV
+dunes	N
+somethings	rvN
+sways	VtN
+brews	NVti
+beats	VtiNA
+crosses	NtAVi
+kids	NVi
+chases	NVti
+chased	NVti
+waited	NVi
+streets	N
+pills	NtiV
+knows	VN
+snakes	VitV
+stormed	NVi
+spreads	VtNA
+thunderstorms	N
+cheated	VitN
+itches	NiV
+joints	NAtV
+Viagra	N
+online	Av
+poo	!NV
+yo	!
