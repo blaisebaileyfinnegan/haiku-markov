@@ -42,6 +42,7 @@ public class Parser
 		ArrayList<String> sentence = new ArrayList<String>();
 		while(s.hasNext())
 		{
+            // get rid of apostrophes, commas, quotes, etc.
 			String spelling = s.next().toUpperCase().replace("[\",\\,]", "");
 			boolean endOfSentence = false;
 			while(spelling.endsWith(".") || spelling.endsWith("?") || spelling.endsWith("!") || spelling.endsWith(";"))

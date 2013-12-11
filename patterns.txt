@@ -1564,4 +1564,140 @@ Verb_Usu_Participle Adjective | Preposition | Noun | Noun
 
 Noun Adverb Verb_Intransitive Verb_Transitive Verb_Usu_Participle Adjective | Adverb | Noun Verb_Usu_Participle Verb_Transitive Adjective 
 Definite_Article Conjunction Adjective | Noun Definite_Article Interjection | Noun Verb_Usu_Participle Verb_Transitive | Conjunction Noun | Noun | Noun Verb_Transitive Verb_Intransitive Verb_Usu_Participle 
-N
+Noun Adjective 
+
+Noun Preposition Adverb Adjective | Noun Definite_Article Verb_Usu_Participle Preposition | Verb_Usu_Participle Verb_Transitive Verb_Intransitive Noun | Noun Preposition | Noun Verb_Transitive Verb_Intransitive Verb_Usu_Participle Adjective 
+Pronoun Noun Adjective | Verb_Usu_Participle Verb_Intransitive Noun | Preposition | Noun Definite_Article Interjection | Noun Adjective 
+Noun 
+
+Noun Definite_Article Verb_Usu_Participle Preposition | Noun | Noun Preposition Adverb Adjective 
+Noun Definite_Article Interjection | Noun Verb_Transitive Verb_Usu_Participle | Noun 
+Preposition Adverb | Noun Verb_Usu_Participle Verb_Intransitive | Noun Definite_Article Verb_Usu_Participle Preposition | Noun Verb_Usu_Participle Verb_Intransitive 
+
+Noun | Definite_Article Adverb Noun Adjective | Noun 
+Noun Adverb Definite_Article Adjective | Noun Definite_Article Adverb Adjective | Noun Preposition | Noun Verb_Usu_Participle Verb_Transitive 
+Conjunction Preposition | Conjunction Preposition Adverb 
+
+Noun Verb_Usu_Participle | Verb_Usu_Participle Verb_Transitive Verb_Intransitive Noun Adjective | Adverb 
+Pronoun Noun Adjective | Noun Verb_Usu_Participle Verb_Intransitive | Adverb | Noun Preposition Conjunction | Noun Definite_Article Interjection | Noun Verb_Transitive Verb_Intransitive Verb_Usu_Participle 
+Noun Verb_Usu_Participle Verb_Transitive Verb_Intransitive | Pronoun Noun Adjective | Noun Verb_Usu_Participle Verb_Intransitive | Noun Preposition Adverb Adjective | Adjective Noun 
+
+Noun Verb_Transitive Verb_Intransitive Verb_Usu_Participle | Noun Verb_Usu_Participle | Definite_Article Adverb Pronoun Interjection | Pronoun Noun | Verb_Usu_Participle Verb_Intransitive Noun 
+Adjective | Noun Verb_Intransitive Verb_Transitive Verb_Usu_Participle | Noun Preposition Adverb Adjective | Definite_Article Adverb | Noun Verb_Transitive Verb_Usu_Participle Verb_Intransitive 
+Definite_Article Adverb | Noun Verb_Usu_Participle | Noun Preposition | Noun Definite_Article Verb_Usu_Participle Preposition | Noun Verb_Transitive Verb_Usu_Participle 
+
+Adverb Conjunction Noun Adjective | Preposition | Noun Definite_Article Verb_Usu_Participle Preposition | Noun Verb_Usu_Participle 
+Noun Adverb Interjection | Adjective Noun | Definite_Article Conjunction Adverb Pronoun | Verb_Usu_Participle 
+Adverb Pronoun Conjunction Noun | Verb_Usu_Participle | Pronoun Noun Adjective | Adverb 
+
+Adjective | Adjective 
+Verb_Usu_Participle | Noun | Noun Adjective Adverb | Definite_Article Adverb | Adjective Adverb Noun Verb_Usu_Participle Interjection | Verb_Usu_Participle Verb_Transitive Noun 
+Preposition Adverb | Noun Verb_Usu_Participle Verb_Transitive Adjective | Preposition | Noun Definite_Article Interjection | Noun Verb_Usu_Participle 
+
+Noun Definite_Article Interjection | Adjective Noun | Noun 
+Verb_Usu_Participle Verb_Transitive Verb_Intransitive Noun | Definite_Article Adverb | Verb_Usu_Participle Noun | Noun Verb_Transitive Verb_Usu_Participle | Preposition | Pronoun Definite_Article | Noun Verb_Intransitive Verb_Usu_Participle 
+Conjunction Noun | Pronoun Noun | Noun Verb_Usu_Participle | Adjective 
+
+Noun Verb_Usu_Participle | Verb_Usu_Participle | Adjective | Adjective Noun Verb_Usu_Participle 
+Preposition Adverb Conjunction Adjective | Noun Definite_Article Verb_Usu_Participle Preposition | Noun Adjective Adverb Verb_Intransitive Verb_Usu_Participle | Noun | Noun Preposition | Noun Verb_Transitive Verb_Intransitive Verb_Usu_Participle 
+Noun Verb_Usu_Participle Verb_Transitive Verb_Intransitive Adjective Adverb | Definite_Article | Noun | Conjunction Noun | Noun Verb_Usu_Participle 
+
+Noun Adjective Verb_Usu_Participle | Noun Verb_Transitive Adjective Verb_Usu_Participle Verb_Intransitive | Noun Definite_Article Interjection | Noun Verb_Usu_Participle Verb_Transitive 
+Noun Conjunction Preposition Adverb | Pronoun Noun Adjective | Verb_Usu_Participle Verb_Transitive Noun Adjective Adverb | Definite_Article Adverb | Noun Adjective Verb_Usu_Participle | Noun 
+Definite_Article Adverb | Verb_Usu_Participle Noun | Noun Verb_Usu_Participle Verb_Transitive Adjective | Adverb Adjective Noun Interjection 
+
+Noun Verb_Intransitive Verb_Transitive Verb_Usu_Participle | Noun Verb_Usu_Participle | Verb_Usu_Participle Noun Adjective | Noun Preposition Adverb Verb_Transitive Verb_Intransitive Verb_Usu_Participle Adjective 
+Definite_Article Adverb | Noun | Noun Verb_Usu_Participle | Noun Adjective Verb_Usu_Participle | Conjunction Noun | Noun Adjective 
+Pronoun Noun Adjective | Noun Verb_Usu_Participle Adjective | Adjective Noun Verb_Transitive Verb_Intransitive Verb_Usu_Participle | Conjunction Noun | Noun Adjective Adverb 
+
+Definite_Article Adverb | Noun Verb_Usu_Participle | Noun Verb_Usu_Participle | Verb_Intransitive Noun Verb_Usu_Participle 
+Pronoun Noun Adjective | Noun Verb_Transitive Verb_Intransitive Verb_Usu_Participle | Definite_Article Adverb | Noun Verb_Usu_Participle | Preposition Adverb Adjective | Noun Definite_Article Interjection | Noun 
+Noun | Noun Verb_Usu_Participle | Adjective 
+
+Definite_Article Adverb | Noun | Verb_Usu_Participle Noun | Verb_Usu_Participle Adjective 
+Definite_Article Adverb | Noun Verb_Transitive Verb_Usu_Participle Verb_Intransitive | Noun Adjective Adverb | Noun | Pronoun Definite_Article | Adverb Adjective Noun Interjection 
+Conjunction Adverb | Noun Verb_Usu_Participle Verb_Intransitive | Noun Verb_Usu_Participle | Verb_Usu_Participle Verb_Transitive Verb_Intransitive Noun Adjective 
+
+Verb_Usu_Participle Verb_Transitive Verb_Intransitive Noun | Noun Verb_Usu_Participle | Noun Verb_Usu_Participle Verb_Transitive Verb_Intransitive Adverb | Verb_Usu_Participle Noun | Noun Verb_Transitive Adjective Verb_Usu_Participle Verb_Intransitive 
+Definite_Article Adverb | Noun Verb_Intransitive Verb_Transitive Verb_Usu_Participle | Noun Verb_Usu_Participle Verb_Intransitive | Conjunction Noun | Noun 
+Verb_Usu_Participle Verb_Transitive Verb_Intransitive Noun | Verb_Usu_Participle Verb_Transitive Verb_Intransitive | Noun Verb_Usu_Participle Verb_Transitive Adverb | Definite_Article Adverb | Noun Verb_Usu_Participle Verb_Intransitive 
+
+Verb_Usu_Participle Noun | Noun Verb_Usu_Participle | Noun Verb_Usu_Participle Verb_Transitive Verb_Intransitive Adverb | Verb_Usu_Participle Noun | Noun Verb_Transitive Adjective Verb_Usu_Participle Verb_Intransitive 
+Definite_Article Adverb | Noun Verb_Intransitive Verb_Transitive Verb_Usu_Participle | Noun Verb_Usu_Participle Verb_Intransitive | Conjunction Noun | Noun 
+Verb_Usu_Participle Verb_Transitive Verb_Intransitive Noun | Verb_Usu_Participle Verb_Transitive Verb_Intransitive | Noun Verb_Usu_Participle Verb_Transitive Adverb | Definite_Article Adverb | Noun Verb_Usu_Participle Verb_Intransitive 
+
+Noun Verb_Usu_Participle Verb_Transitive | Noun Verb_Usu_Participle Verb_Transitive Verb_Intransitive | Noun Verb_Usu_Participle Verb_Intransitive Verb_Transitive | Verb_Usu_Participle Verb_Transitive Noun | Noun 
+Noun Verb_Transitive Verb_Usu_Participle | Noun Verb_Usu_Participle Adverb Preposition Adjective | Preposition | Noun Definite_Article Verb_Usu_Participle Preposition | Noun Verb_Usu_Participle Verb_Transitive | Preposition | Noun Verb_Usu_Participle Verb_Intransitive Verb_Transitive 
+Preposition Adverb Adjective | Adverb Interjection | Verb_Usu_Participle Noun | Noun Verb_Usu_Participle Verb_Intransitive Verb_Transitive | Noun 
+
+Noun Definite_Article Verb_Usu_Participle Preposition | Noun | Noun Preposition Adverb Adjective | Noun 
+Noun | Noun Definite_Article Verb_Usu_Participle Preposition | Noun 
+Noun Preposition Adverb Adjective | Noun Adjective Verb_Intransitive Verb_Transitive Verb_Usu_Participle | Noun Verb_Transitive Verb_Usu_Participle 
+
+Adjective Noun | Preposition Adjective Adverb | Definite_Article Adverb | Noun Adjective 
+Pronoun Noun Adjective | Verb_Usu_Participle Verb_Transitive Verb_Intransitive | Noun Verb_Usu_Participle Verb_Intransitive | Verb_Usu_Participle Verb_Intransitive Noun Adjective | Noun Verb_Transitive Verb_Usu_Participle | Verb_Usu_Participle Noun Adjective 
+Noun Verb_Usu_Participle Verb_Intransitive | Noun Definite_Article Verb_Usu_Participle Preposition | Adjective Noun Verb_Transitive Adverb Verb_Usu_Participle 
+
+Noun Verb_Intransitive Verb_Transitive Verb_Usu_Participle | Noun Preposition Adverb Adjective | Definite_Article Adverb | Noun Verb_Transitive Verb_Usu_Participle 
+Noun Verb_Usu_Participle Verb_Transitive Verb_Intransitive | Noun Preposition Adverb Adjective | Definite_Article Adverb | Adjective Noun Adverb | Noun 
+Definite_Article Adverb | Noun Verb_Usu_Participle Verb_Intransitive | Noun Verb_Usu_Participle | Noun Adjective Adverb 
+
+Definite_Article Adverb | Noun Verb_Transitive Verb_Usu_Participle Verb_Intransitive | Noun Verb_Usu_Participle | Noun Verb_Usu_Participle Verb_Transitive | Noun Adjective Adverb 
+Definite_Article Adverb | Noun Verb_Usu_Participle Verb_Transitive | Noun Verb_Usu_Participle | Adverb 
+Noun | Verb_Usu_Participle Adjective | Noun Preposition Adverb Adjective | Noun Verb_Intransitive Verb_Usu_Participle Adjective 
+
+Noun | Verb_Transitive Adjective 
+Definite_Article Adverb Noun Adjective | Adjective | Pronoun Adverb Noun | Adjective 
+Noun Definite_Article Verb_Usu_Participle Preposition | Noun | Adverb Adjective | Verb_Usu_Participle Adjective 
+
+Adjective Noun Verb_Usu_Participle Verb_Transitive | Noun Verb_Usu_Participle Verb_Transitive | Noun 
+Noun Interjection | Noun Preposition Adverb Adjective | Definite_Article Pronoun | Noun | Verb_Usu_Participle Noun 
+Adverb | Adjective Noun Verb_Usu_Participle 
+
+Noun Definite_Article Interjection | Noun Adjective | Noun Verb_Usu_Participle 
+Noun Preposition | Noun Adjective Verb_Usu_Participle | Noun Preposition Adverb Adjective | Noun Verb_Transitive Verb_Usu_Participle | Adverb 
+Noun Verb_Usu_Participle Verb_Transitive Verb_Intransitive Adjective 
+
+Verb_Usu_Participle Verb_Intransitive Verb_Transitive | Noun Verb_Usu_Participle | Noun Adjective | Noun 
+Pronoun | Noun Verb_Usu_Participle | Adverb Adjective | Verb_Usu_Participle Verb_Intransitive Adjective Noun | Noun Adverb 
+Pronoun Noun Adjective | Verb_Usu_Participle Verb_Intransitive Verb_Transitive Noun | Definite_Article Pronoun Noun Adjective | Noun Verb_Usu_Participle | Noun Pronoun 
+
+Noun Verb_Transitive Verb_Usu_Participle | Verb_Usu_Participle Noun | Noun Adjective Interjection Adverb | Noun 
+Definite_Article Adverb Adjective | Noun Verb_Transitive Verb_Usu_Participle | Noun Adjective Adverb | Verb_Usu_Participle Verb_Intransitive Verb_Transitive Noun | Adjective 
+Conjunction Noun | Noun Verb_Transitive Verb_Usu_Participle | Noun Verb_Usu_Participle | Noun Adjective Verb_Usu_Participle Verb_Transitive 
+
+Pronoun Noun Adjective | Verb_Usu_Participle Verb_Transitive Noun | Noun Preposition Conjunction | Pronoun Noun 
+Preposition Adverb | Verb_Usu_Participle Verb_Intransitive Noun | Verb_Usu_Participle Verb_Transitive Verb_Intransitive Adjective | Noun 
+Noun Verb_Usu_Participle Verb_Transitive Adjective | Noun Adjective Adverb Verb_Usu_Participle | Preposition Adverb | Noun Verb_Transitive Verb_Usu_Participle 
+
+Definite_Article Pronoun Noun Adjective | Noun Verb_Transitive | Noun Verb_Usu_Participle | Definite_Article Adverb Noun Adjective | Pronoun Noun Adjective | Verb_Usu_Participle Verb_Transitive Noun | Preposition Adverb | Noun Verb_Usu_Participle Verb_Transitive Adverb 
+Definite_Article Adverb | Adjective | Noun Verb_Transitive Verb_Usu_Participle 
+Preposition Adverb Conjunction Adjective | Pronoun Noun | Noun Adjective Adverb | Noun Verb_Usu_Participle Verb_Intransitive 
+
+Definite_Article Adverb | Noun Verb_Intransitive Verb_Usu_Participle Verb_Transitive | Verb_Usu_Participle Verb_Transitive Noun Adjective | Definite_Article | Noun 
+Adjective Noun Adverb | Noun Adjective Adverb | Noun Verb_Usu_Participle Adverb Preposition Adjective | Conjunction Noun Preposition Verb_Transitive | Pronoun Noun Adjective | Verb_Usu_Participle Verb_Intransitive Verb_Transitive Noun 
+Conjunction Noun | Noun Verb_Usu_Participle | Definite_Article | Noun Verb_Intransitive 
+
+Noun | Noun Verb_Usu_Participle | Noun Definite_Article Verb_Usu_Participle Preposition | Noun Verb_Usu_Participle 
+Pronoun Noun | Adverb Interjection | Noun | Noun Conjunction Preposition Adverb | Noun Definite_Article Verb_Usu_Participle Preposition | Noun Verb_Intransitive Adjective 
+Conjunction Preposition Adverb Noun | Noun Conjunction Preposition Adverb | Noun Definite_Article Verb_Usu_Participle Preposition | Noun Verb_Transitive Verb_Usu_Participle 
+
+Adjective Noun Verb_Usu_Participle Adverb | Noun Verb_Usu_Participle Verb_Transitive Verb_Intransitive Adjective | Noun | Noun Verb_Intransitive Verb_Usu_Participle 
+Noun Definite_Article Verb_Usu_Participle Preposition | Noun | Noun Preposition | Noun Definite_Article Interjection | Noun 
+Pronoun Noun Adjective | Verb_Usu_Participle Verb_Transitive Verb_Intransitive Noun | Noun Preposition Conjunction | Definite_Article Adverb | Noun Adjective Adverb Preposition 
+
+Noun Verb_Intransitive Verb_Usu_Participle Adjective | Verb_Usu_Participle | Noun Adjective Adverb | Noun Verb_Transitive Verb_Usu_Participle 
+Definite_Article | Noun Adjective Verb_Transitive Verb_Usu_Participle | Verb_Usu_Participle Verb_Intransitive Noun | Conjunction Noun | Verb_Usu_Participle Verb_Transitive Verb_Intransitive Noun Adjective | Conjunction Noun | Verb_Usu_Participle Verb_Intransitive Verb_Transitive Noun Adverb Interjection Adjective 
+Adverb Conjunction Pronoun Noun | Verb_Usu_Participle | Pronoun Noun Adjective | Verb_Usu_Participle Verb_Intransitive Noun | Noun Adjective 
+
+Definite_Article | Noun | Noun Verb_Usu_Participle | Adjective 
+Pronoun | Verb_Usu_Participle Noun | Verb_Usu_Participle Adjective | Adjective Adverb | Noun Verb_Usu_Participle 
+Definite_Article Conjunction Adverb Pronoun | Pronoun Noun | Noun Verb_Intransitive Verb_Transitive Adjective Verb_Usu_Participle | Verb_Usu_Participle Verb_Intransitive Noun | Noun Adjective Adverb Verb_Usu_Participle 
+
+Adjective 
+Pronoun Noun | Verb_Usu_Participle Verb_Transitive Noun | Noun Preposition Adverb Adjective | Verb_Usu_Participle Noun | Definite_Article Adverb | Noun Verb_Transitive Verb_Usu_Participle 
+Pronoun Noun | Verb_Usu_Participle 
+
+Adjective Noun Verb_Usu_Participle | Noun Adjective Verb_Usu_Participle Adverb Verb_Intransitive | Adjective Noun | Noun Preposition Adverb Verb_Transitive Verb_Intransitive Verb_Usu_Participle Adjective 
+Definite_Article Adverb | Noun | Conjunction Noun | Noun Adjective Adverb Preposition | Definite_Article Adverb | Noun Verb_Intransitive Verb_Transitive Verb_Usu_Participle | Noun Verb_Transitive Verb_Usu_Participle 
+Adverb Pronoun Conjunction Noun | Verb_Usu_Participle | Definite_Article Adverb | Noun Verb_Usu_Participle | Noun Verb_Usu_Participle Adjective 

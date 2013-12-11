@@ -13,10 +13,10 @@ public class Dictionary
 			new HashMap<String, Word>();
 	public static HashMap<Integer, ArrayList<Word>> SyllableDictionary = 
 			new HashMap<Integer, ArrayList<Word>>();
-	public static HashMap<String, Integer> SyllableLookup = 
-			new HashMap<String, Integer>();
 	public static HashMap<POS, ArrayList<Word>> PartOfSpeechDictionary = 
 			new HashMap<POS, ArrayList<Word>>();
+	public static HashMap<Integer, ArrayList<Word>> SentimentDictionary = 
+			new HashMap<Integer, ArrayList<Word>>();
 	
 	private static Word getWord(String spelling)
 	{
@@ -36,11 +36,16 @@ public class Dictionary
 			String word_spelling = parts[0];
 			int syllables = Integer.parseInt(parts[1]);
 			
-			SyllableLookup.put(word_spelling, syllables);
+			Word word = getWord(word_spelling);
+			word.syllables = syllables;
+			if(!SyllableDictionary.containsKey(syllables))
+				SyllableDictionary.put(syllables, new ArrayList<Word>());
+			SyllableDictionary.get(syllables).add(word);
 		}
 		s.close();
 	}
 	
+	//THE POS DICTIONARY IS USED AS THE "SOURCE" OF ALL WORDS.
 	public static void LoadPOSDictionary(String fileLocation) throws FileNotFoundException
 	{
 		Scanner s = new Scanner(new File(fileLocation));
@@ -48,18 +53,11 @@ public class Dictionary
 		{
 			String line = s.nextLine();
 			String[] parts = line.split("\t");
-			String word_spelling = parts[0];
+			String word_spelling = parts[0].toUpperCase();
 			char[] POS_text = parts[1].toCharArray();
 			
-			Word word = getWord(word_spelling);
-			if(SyllableLookup.containsKey(word_spelling.toUpperCase()))
-			{
-				Integer syllableCount = SyllableLookup.get(word_spelling.toUpperCase());
-				word.syllables = syllableCount;
-				if(!SyllableDictionary.containsKey(syllableCount))
-						SyllableDictionary.put(syllableCount, new ArrayList<Word>());
-				SyllableDictionary.get(syllableCount).add(word);
-			}
+			if(!Words.containsKey(word_spelling))continue;
+			Word word = Words.get(word_spelling);
 			for(char c : POS_text)
 			{
 				POS pos = POS.Unknown;
@@ -80,13 +78,34 @@ public class Dictionary
 				if(c == 'o') pos = POS.Nominative;
 				if(pos != POS.Unknown)
 				{
+					word.PartsOfSpeech.remove(POS.Unknown);
 					word.PartsOfSpeech.add(pos);
 					if(!PartOfSpeechDictionary.containsKey(pos))
 						PartOfSpeechDictionary.put(pos, new ArrayList<Word>());
 					PartOfSpeechDictionary.get(pos).add(word);
 				}
 			}
-			//TODO: Add Enumset of POS dictionary.
+		}
+		s.close();
+	}
+
+	public static void LoadSentimentDictionary(String fileLocation) throws FileNotFoundException
+	{
+		Scanner s = new Scanner(new File(fileLocation));
+		while(s.hasNextLine())
+		{
+			String line = s.nextLine();
+			String[] parts = line.split(" ");
+			String word_spelling = parts[0];
+			int syllables = Integer.parseInt(parts[1]);
+			
+			if(Words.containsKey(word_spelling))
+			{
+				Word w = Words.get(word_spelling);
+				if(!SentimentDictionary.containsKey(syllables))
+					SentimentDictionary.put(syllables, new ArrayList<Word>());
+				SentimentDictionary.get(syllables).add(w);
+			}
 		}
 		s.close();
 	}
