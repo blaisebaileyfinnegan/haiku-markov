@@ -15,7 +15,9 @@ public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		System.out.print("Reading dictionaries from file...");
+
 		Global.Initialize();
+
 		System.out.println("Done");
 		
 		System.out.print("Enter a word: ");
@@ -34,12 +36,12 @@ public class Main {
 				System.out.print(p.toString() + ", ");
 			System.out.println();
 
-			System.out.print("Associated Words: ");
+			System.out.print("Sentence Associated Words: ");
 			Set<Entry<Word, Integer>> associated = word.Associated.entrySet();
 			for(Entry<Word, Integer> w : associated)
 				System.out.print(w.getKey().spelling + " ");
 			System.out.println("\n");
-			
+
 			System.out.print("Collocated Before: ");
 			Set<Entry<Word, Integer>> before = word.CollocatedBefore.entrySet();
 			for(Entry<Word, Integer> w : before)
@@ -51,7 +53,21 @@ public class Main {
 			for(Entry<Word, Integer> w : after)
 				System.out.print(w.getKey().spelling + " ");
 			System.out.println("\n");
-			
+
+			if (word.hasWanResponses()) {
+                int totalResponses = word.totalWanResponseCount;
+                System.out.println(totalResponses + " total responses to this word");
+				System.out.println("WAN response words:");
+				Set<Entry<Word, Integer>> responses = word.WordToWanFrequency.entrySet();
+				for (Entry<Word, Integer> entry : responses) {
+					System.out.print("(" + entry.getKey().spelling + ", " + entry.getValue() + ") ");
+				}
+			} else {
+				System.out.println("No WAN targets for this word.");
+			}
+
+			System.out.println("\n");
+
 		}
 		s.close();
 	}

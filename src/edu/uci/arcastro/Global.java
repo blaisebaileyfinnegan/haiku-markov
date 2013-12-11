@@ -14,6 +14,7 @@ public class Global {
 		Dictionary.LoadSyllableDictionary("syllables.txt");
 		Dictionary.LoadPOSDictionary("part-of-speech_UPDATED.txt");
 		Parser.TrainWithCorpus("big.txt");
+        Parser.TrainWithWAN("wan/wan-processed.txt");
 	}
 
 }
