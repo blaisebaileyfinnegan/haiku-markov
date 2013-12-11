@@ -55,10 +55,12 @@ public class Main {
 			System.out.println("\n");
 
 			if (word.hasWanResponses()) {
+                int totalResponses = word.totalWanResponseCount;
+                System.out.println(totalResponses + " total responses to this word");
 				System.out.println("WAN response words:");
 				Set<Entry<Word, Integer>> responses = word.WordToWanFrequency.entrySet();
 				for (Entry<Word, Integer> entry : responses) {
-					System.out.print("(" + entry.getKey().spelling + ", " + entry.getValue());
+					System.out.print("(" + entry.getKey().spelling + ", " + entry.getValue() + ") ");
 				}
 			} else {
 				System.out.println("No WAN targets for this word.");

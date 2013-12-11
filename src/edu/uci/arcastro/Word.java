@@ -15,16 +15,13 @@ public class Word
 	public final HashMap<Word, Integer> CollocatedAfter;
 	public final HashMap<Word, Integer> Associated;
 	public final ArrayList<Word> Rhyme;
-<<<<<<< HEAD
 
 	private static final int NO_RESPONSES = -1;
 
 	public int totalWanResponseCount = NO_RESPONSES;
 	public final HashMap<Word, Integer> WordToWanFrequency;
 
-=======
 	public int sentiment;
->>>>>>> 46c693ab9d36a751d146a5296024919e09e9ff7e
 	public Word(String spelling)
 	{
 		this.syllables = 0;
