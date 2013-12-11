@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 
 public class Global {
 	
+	//Initialize all data from files
 	public static void Initialize() throws FileNotFoundException
 	{
 		Patterns.LoadFiveSyllables("5 Syllables.txt");

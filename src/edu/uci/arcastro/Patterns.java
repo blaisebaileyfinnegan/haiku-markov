@@ -51,12 +51,11 @@ public class Patterns {
 		
 		while(reader.hasNextLine())
 		{
-			
 			EnumSet<POS> set = EnumSet.noneOf(POS.class);
 			SentencePattern newPttrn = new SentencePattern();
 			int numLine = 0;
 			
-			while(numLine <3 && reader.hasNextLine())
+			while(numLine < 3 && reader.hasNextLine())
 			{
 				String lineOfText = reader.nextLine();
 				String[] stArray = lineOfText.split(" ");
@@ -65,7 +64,7 @@ public class Patterns {
 				
 				for(int i = 0; i < stArray.length; i++)
 				{
-					POS pos = null;
+					POS pos = POS.Unknown;
 					
 					if(stArray[i].equals("Noun")) pos = POS.Noun;
 					if(stArray[i].equals("Plural")) pos = POS.Plural;
@@ -82,7 +81,7 @@ public class Patterns {
 					if(stArray[i].equals("Definite_Article")) pos = POS.Definite_Article;
 					if(stArray[i].equals("Indefinite_Article")) pos = POS.Indefinite_Article;
 					if(stArray[i].equals("Nominative")) pos = POS.Nominative;
-					if(pos != null && !stArray[i].equals("|"))
+					if(pos != POS.Unknown && !stArray[i].equals("|"))
 						set.add(pos);
 					
 					if(stArray[i].equals("|") || i == stArray.length-1){
@@ -99,11 +98,9 @@ public class Patterns {
 			if(numLine == 3) grammarPatterns.add(newPttrn);
 		}
 		reader.close();
-		/*
-		System.out.println(grammarPatterns.size());
-		System.out.println(grammarPatterns.get(425).firstLine.get(0).toString());
-		System.out.println(grammarPatterns.get(425).secondLine.get(0).toString());
-		System.out.println(grammarPatterns.get(425).thirdLine.get(0).toString());
-		*/
+		/*System.out.println(grammarPatterns.size());
+		System.out.println(grammarPatterns.get(100).firstLine.get(0).toString());
+		System.out.println(grammarPatterns.get(100).secondLine.get(0).toString());
+		System.out.println(grammarPatterns.get(100).thirdLine.get(0).toString());*/
 	}
 }
