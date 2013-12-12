@@ -69,15 +69,7 @@ public class UsingMarkovChainAndPattern implements HaikuGenerator {
     }
 
     private Word GenerateWord(int Syllables, EnumSet<POS> POS, Word PreviousWord) throws ImpossibleException {
-        ArrayList<Word> candidates = new ArrayList<Word>();
-        ArrayList<Word> SyllableCandidates = Dictionary.SyllableDictionary.get(Syllables);
-        HashMap<Word, Integer> CollocationCandidates = (PreviousWord == null ? null : PreviousWord.CollocatedAfter);
-        for(Word w : SyllableCandidates)
-            if(w.PartsOfSpeech.containsAll(POS))
-                candidates.add(w);
-        if(candidates.size() == 0)
-            throw new ImpossibleException(
-                    String.format("Could not find any word with $i syllables and the following parts of speech: %s", Syllables, POS.toString()));
-        return Query.ChooseRandom(candidates);
+
+        // Can you do this michael?
     }
 }
