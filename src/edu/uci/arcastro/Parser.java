@@ -23,7 +23,7 @@ public class Parser
 			int totalResponses = Integer.parseInt(fields[2]);
 			int specificResponses = Integer.parseInt(fields[3]);
 
-			if (Dictionary.Words.containsKey(cue)) {
+			if (Dictionary.Words.containsKey(cue) && Dictionary.Words.containsKey(target)) {
 				Word w = Dictionary.Words.get(cue);
 				if (!w.hasWanResponses()) {
 					// Add total response count for this word if it doesn't exist

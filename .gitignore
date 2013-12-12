@@ -6,3 +6,5 @@ out
 # Package Files #
 *.war
 *.ear
+
+.DS_Store
