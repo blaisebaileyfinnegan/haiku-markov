@@ -1,22 +1,20 @@
 package edu.uci.arcastro;
 
-import static com.wagnerandade.coollection.Coollection.from;
-import static com.wagnerandade.coollection.Coollection.greaterThan;
-
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.Map.Entry;
+import java.util.Scanner;
+
+import edu.uci.arcastro.Generators.HaikuGenerator;
+import edu.uci.arcastro.Generators.UsingPatterns;
 
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		System.out.print("Reading dictionaries from file...");
-
 		Global.Initialize();
-
 		System.out.println("Done");
 		
-		System.out.print("Enter a word: ");
+		HaikuGenerator g = new UsingPatterns();
 		Scanner s = new Scanner(System.in);
 		while(s.hasNextLine())
 		{
