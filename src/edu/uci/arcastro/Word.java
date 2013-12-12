@@ -65,11 +65,6 @@ public class Word
 	}
 
 	public void setWanResponseCount(int responses) {
-		if (hasWanResponses()) {
-			// throw new Exception("WAN Response count already set for word " + spelling);
-			return;
-		}
-
 		this.totalWanResponseCount = responses;
 	}
 }
