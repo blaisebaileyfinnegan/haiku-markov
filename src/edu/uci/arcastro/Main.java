@@ -4,12 +4,8 @@ import static com.wagnerandade.coollection.Coollection.from;
 import static com.wagnerandade.coollection.Coollection.greaterThan;
 
 import java.io.FileNotFoundException;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Set;
 
 public class Main {
 
@@ -30,44 +26,24 @@ public class Main {
 				System.out.println("No word with that exact spelling was found.");
 				continue;
 			}
-			Word word = Dictionary.Words.get(word_spelling);
-			System.out.format("WORD: %s\nParts of Speech: ", word.spelling);
-			for(POS p : word.PartsOfSpeech)
-				System.out.print(p.toString() + ", ");
-			System.out.println();
 
-			System.out.print("Sentence Associated Words: ");
-			Set<Entry<Word, Integer>> associated = word.Associated.entrySet();
-			for(Entry<Word, Integer> w : associated)
-				System.out.print(w.getKey().spelling + " ");
-			System.out.println("\n");
+			Word inputWord = Dictionary.Words.get(word_spelling);
 
-			System.out.print("Collocated Before: ");
-			Set<Entry<Word, Integer>> before = word.CollocatedBefore.entrySet();
-			for(Entry<Word, Integer> w : before)
-				System.out.print(w.getKey().spelling + " ");
-			System.out.println("\n");
+			System.out.println("Enter a syllable count:");
+			int syllableCount = Integer.parseInt(s.nextLine());
+			System.out.println("Enter a part of speech (Noun, Verb, Adjective, etc.):");
+			String pos = s.nextLine().trim();
 
-			System.out.print("Collocated After: ");
-			Set<Entry<Word, Integer>> after = word.CollocatedAfter.entrySet();
-			for(Entry<Word, Integer> w : after)
-				System.out.print(w.getKey().spelling + " ");
-			System.out.println("\n");
+			ArrayList<Predicate> predicates = new ArrayList<Predicate>();
+			predicates.add(new SyllablePredicate(syllableCount));
+			predicates.add(new AnyPOSPredicate(EnumSet.of(POS.valueOf(pos))));
 
-			if (word.hasWanResponses()) {
-                int totalResponses = word.totalWanResponseCount;
-                System.out.println(totalResponses + " total responses to this word");
-				System.out.println("WAN response words:");
-				Set<Entry<Word, Integer>> responses = word.WordToWanFrequency.entrySet();
-				for (Entry<Word, Integer> entry : responses) {
-					System.out.print("(" + entry.getKey().spelling + ", " + entry.getValue() + ") ");
-				}
-			} else {
-				System.out.println("No WAN targets for this word.");
+			ConstrainedAssociations c = new ConstrainedAssociations(inputWord, predicates);
+			Set<Word> words = c.WordToWanFrequency.keySet();
+			System.out.println("WAN words:");
+			for (Word w : words) {
+				System.out.println(w.spelling());
 			}
-
-			System.out.println("\n");
-
 		}
 		s.close();
 	}

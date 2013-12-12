@@ -34,7 +34,7 @@ public class Word
 		this.Rhyme = new ArrayList<Word>();
 		PartsOfSpeech = EnumSet.of(POS.Unknown);
 	}
-	
+
 	public String spelling() {
 		return spelling;
 	}
@@ -56,6 +56,11 @@ public class Word
 	public HashMap<Word, Integer> Associated(){
 		return Associated;
 	}
+
+	public HashMap<Word, Integer> WordToWanFrequency() {
+		return this.WordToWanFrequency;
+	}
+
 	public ArrayList<Word> Rhyme(){
 		return Rhyme;
 	}
