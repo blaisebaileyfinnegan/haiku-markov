@@ -1,4 +1,6 @@
-package edu.uci.arcastro;
+package edu.uci.arcastro.Generators;
+
+import edu.uci.arcastro.Word;
 
 public interface HaikuGenerator 
 {
