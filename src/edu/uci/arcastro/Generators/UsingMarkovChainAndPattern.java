@@ -1,21 +1,20 @@
 package edu.uci.arcastro.Generators;
 
+import edu.uci.arcastro.*;
+import edu.uci.arcastro.Exceptions.ImpossibleException;
+
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.HashMap;
 
-import edu.uci.arcastro.Dictionary;
-import edu.uci.arcastro.Exceptions.ImpossibleException;
-import edu.uci.arcastro.POS;
-import edu.uci.arcastro.Patterns;
-import edu.uci.arcastro.Query;
-import edu.uci.arcastro.SentencePattern;
-import edu.uci.arcastro.Word;
+/**
+ * Created by Alan Castro on 12/12/13.
+ */
+public class UsingMarkovChainAndPattern implements HaikuGenerator {
 
-public class UsingPatterns implements HaikuGenerator {
-
-	@Override
-	public String Generate(Word[] seeds) {
+    @Override
+    public String Generate(Word[] seeds) {
         for(int i = 0; i < 10; i++)
         {
             try
@@ -41,7 +40,7 @@ public class UsingPatterns implements HaikuGenerator {
             catch (ImpossibleException e){}
         }
         return "Could not generate Haiku after 10 tries. Giving up.";
-	}
+    }
 
     private int[] ChooseSyllablePattern(List<int[]> SyllablePatterns, int WordCount) throws ImpossibleException {
         ArrayList<int[]> candidate = new ArrayList<int[]>();
@@ -50,32 +49,35 @@ public class UsingPatterns implements HaikuGenerator {
                 candidate.add(SyllablePattern);
         if(candidate.size() == 0)
             throw new ImpossibleException(String.format(
-                "Could not find any syllable patterns with %d words.", WordCount));
+                    "Could not find any syllable patterns with %d words.", WordCount));
         return Query.ChooseRandom(candidate);
     }
-	
-	private String GenerateLine(int[] SyllablePattern, ArrayList<EnumSet<POS>> POSPattern) throws ImpossibleException {
-		StringBuilder line = new StringBuilder();
-		for(int i = 0; i < SyllablePattern.length; i++)
-		{
-			int Syllables = SyllablePattern[i];
-			EnumSet<POS> POS = POSPattern.get(i);
-			
-			if(i > 0) line.append(' ');
-			line.append(GenerateWord(Syllables, POS));
-		}
-		return line.toString();
-	}
-	
-	private String GenerateWord(int Syllables, EnumSet<POS> POS) throws ImpossibleException {
-		ArrayList<Word> candidates = new ArrayList<Word>();
-        ArrayList<Word> SCandidates = Dictionary.SyllableDictionary.get(Syllables);
-		for(Word w : SCandidates)
-			if(w.PartsOfSpeech.containsAll(POS))
-				candidates.add(w);
+
+    private String GenerateLine(int[] SyllablePattern, ArrayList<EnumSet<POS>> POSPattern) throws ImpossibleException {
+        StringBuilder line = new StringBuilder();
+        Word word = null;
+        for(int i = 0; i < SyllablePattern.length; i++)
+        {
+            int Syllables = SyllablePattern[i];
+            EnumSet<POS> POS = POSPattern.get(i);
+
+            if(i > 0) line.append(' ');
+            word = GenerateWord(Syllables, POS, word);
+            line.append(word.spelling);
+        }
+        return line.toString();
+    }
+
+    private Word GenerateWord(int Syllables, EnumSet<POS> POS, Word PreviousWord) throws ImpossibleException {
+        ArrayList<Word> candidates = new ArrayList<Word>();
+        ArrayList<Word> SyllableCandidates = Dictionary.SyllableDictionary.get(Syllables);
+        HashMap<Word, Integer> CollocationCandidates = (PreviousWord == null ? null : PreviousWord.CollocatedAfter);
+        for(Word w : SyllableCandidates)
+            if(w.PartsOfSpeech.containsAll(POS))
+                candidates.add(w);
         if(candidates.size() == 0)
             throw new ImpossibleException(
                     String.format("Could not find any word with $i syllables and the following parts of speech: %s", Syllables, POS.toString()));
-		return Query.ChooseRandom(candidates).spelling;
-	}
+        return Query.ChooseRandom(candidates);
+    }
 }

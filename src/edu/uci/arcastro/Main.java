@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import edu.uci.arcastro.Generators.HaikuGenerator;
+import edu.uci.arcastro.Generators.NaiveGenerator;
 import edu.uci.arcastro.Generators.UsingPatterns;
 
 public class Main {
