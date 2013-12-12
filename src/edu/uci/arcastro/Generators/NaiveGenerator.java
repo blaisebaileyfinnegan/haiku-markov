@@ -1,10 +1,6 @@
 package edu.uci.arcastro.Generators;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-
 import edu.uci.arcastro.Dictionary;
-import edu.uci.arcastro.POS;
 import edu.uci.arcastro.Patterns;
 import edu.uci.arcastro.Query;
 import edu.uci.arcastro.Word;
