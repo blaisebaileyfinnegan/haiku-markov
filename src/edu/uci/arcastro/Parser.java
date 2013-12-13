@@ -1,10 +1,13 @@
 package edu.uci.arcastro;
 
+import edu.uci.arcastro.English.POS;
+import edu.uci.arcastro.English.SentencePattern;
 import edu.uci.arcastro.English.Word;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.Scanner;
 
 public class Parser 
@@ -70,9 +73,11 @@ public class Parser
 	public static void TrainWithSentence(ArrayList<String> sentence)
 	{
 		ArrayList<Word> words = new ArrayList<Word>();
+        boolean AllPresent = true;
 		for(String s : sentence)
 		{
 			Word w = Dictionary.Words.get(s);
+            if(w == null) AllPresent = false;
 			words.add(w);
 		}
 
@@ -107,8 +112,17 @@ public class Parser
 			if(count ==null) w2.CollocatedBefore.put(w1, (count = new Integer(1)));
 			else count++;
 		}
-
 		if(words.size() > 0 && words.get(words.size() - 1) != null) words.get(words.size() - 1).frequency++;
+
+        if(words.size() > 0 && words.get(0) != null)
+        {
+            Integer count = Patterns.startingWords.get(words.get(0));
+            if(count == null) Patterns.startingWords.put(words.get(0), new Integer(1));
+            else count++;
+        }
+
+        if(words.size() > 0 && AllPresent)
+            SentencePattern.AddOrIncrementFrequency(words);
 	}
 
 }

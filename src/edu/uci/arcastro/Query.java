@@ -1,5 +1,6 @@
 package edu.uci.arcastro;
 
+import edu.uci.arcastro.English.Weighers.Weigher;
 import edu.uci.arcastro.Exceptions.ImpossibleException;
 
 import java.util.*;
@@ -49,5 +50,27 @@ public class Query
         }
 
         throw new ImpossibleException("Weighted random picker didn't work");
+    }
+
+    public static <T> T ChooseWeightedRandom(Set<T> Items, Weigher<T> weigher) throws ImpossibleException
+    {
+        if (Items.isEmpty()) {
+            throw new ImpossibleException("Can't choose an entry from an empty set");
+        }
+
+        double totalWeight = 0;
+        for (T item : Items) {
+            totalWeight += weigher.getWeight(item);
+        }
+
+        double random = Math.random() * totalWeight;
+        for (T item : Items) {
+            random -= weigher.getWeight(item);
+            if (random < 0.0d) {
+                return item;
+            }
+        }
+
+        throw new ImpossibleException("Generic Weighted random picker didn't work");
     }
 }

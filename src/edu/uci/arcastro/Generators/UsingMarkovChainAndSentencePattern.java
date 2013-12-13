@@ -1,57 +1,32 @@
 package edu.uci.arcastro.Generators;
 
 import edu.uci.arcastro.*;
+import edu.uci.arcastro.Dictionary;
 import edu.uci.arcastro.English.HaikuPattern;
 import edu.uci.arcastro.English.POS;
+import edu.uci.arcastro.English.SentencePattern;
 import edu.uci.arcastro.English.Word;
-import org.apache.commons.lang3.StringUtils;
-
 import edu.uci.arcastro.Exceptions.ImpossibleException;
-import edu.uci.arcastro.Predicates.*;
+import edu.uci.arcastro.Predicates.AnyPOSPredicate;
+import edu.uci.arcastro.Predicates.ConstrainedAssociations;
+import edu.uci.arcastro.Predicates.Predicate;
+import edu.uci.arcastro.Predicates.SyllablePredicate;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 
 /**
  * Created by Alan Castro on 12/12/13.
  */
-public class UsingMarkovChainAndPattern implements HaikuGenerator {
+public class UsingMarkovChainAndSentencePattern implements HaikuGenerator {
 
     @Override
     public String Generate(Word[] seeds) {
-        for(int i = 0; i < 100; i++)
-        {
-            try
-            {
-                HaikuPattern p = Query.ChooseRandom(Patterns.grammarPatterns);
-                ArrayList<EnumSet<POS>> FirstLinePOSPattern = p.firstLine;
-                ArrayList<EnumSet<POS>> SecondLinePOSPattern = p.secondLine;
-                ArrayList<EnumSet<POS>> ThirdLinePOSPattern = p.thirdLine;
-
-                int[] FirstLineSyllablePattern = ChooseSyllablePattern(Patterns.fiveSyllables, FirstLinePOSPattern.size());
-                int[] SecondLineSyllablePattern = ChooseSyllablePattern(Patterns.sevenSyllables, SecondLinePOSPattern.size());
-                int[] ThirdLineSyllablePattern = ChooseSyllablePattern(Patterns.fiveSyllables, ThirdLinePOSPattern.size());
-
-                StringBuilder Haiku = new StringBuilder();
-                List<Word> line = GenerateLine(FirstLineSyllablePattern, FirstLinePOSPattern, null);
-                Word prevWord = line.get(line.size() - 1);
-                Haiku.append(StringUtils.join(line, " "));
-                Haiku.append('\n');
-
-                line = GenerateLine(SecondLineSyllablePattern, SecondLinePOSPattern, prevWord);
-                prevWord = line.get(line.size() - 1);
-                Haiku.append(StringUtils.join(line, " "));
-                Haiku.append('\n');
-
-                line = GenerateLine(ThirdLineSyllablePattern, ThirdLinePOSPattern, prevWord);
-                Haiku.append(StringUtils.join(line, " "));
-                Haiku.append('\n');
-                return Haiku.toString();
-            }
-            catch (ImpossibleException e){
-                System.out.println(e.getMessage());
-            }
-        }
-        return "Could not generate Haiku after 100 tries. Giving up.";
+        ArrayList<SentencePattern> candidates = new ArrayList<SentencePattern>();
+        for(SentencePattern sp : Dictionary.SentencePatternDictionary.get(4))
+            if(sp.getFrequency() > 1)
+                candidates.add(sp);
+        return StringUtils.join(candidates, "\n");
     }
 
     private int[] ChooseSyllablePattern(List<int[]> SyllablePatterns, int WordCount) throws ImpossibleException {
@@ -86,7 +61,7 @@ public class UsingMarkovChainAndPattern implements HaikuGenerator {
      * @param POS
      * @param PreviousWord: may be null, in which case pick a random word which fulfills the POS and syllable count
      * @return
-     * @throws ImpossibleException
+     * @throws edu.uci.arcastro.Exceptions.ImpossibleException
      */
     private Word GenerateWord(int Syllables, EnumSet<POS> POS, Word PreviousWord) throws ImpossibleException {
         if (PreviousWord == null) {

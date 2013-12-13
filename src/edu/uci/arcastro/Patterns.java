@@ -2,6 +2,8 @@ package edu.uci.arcastro;
 
 import edu.uci.arcastro.English.HaikuPattern;
 import edu.uci.arcastro.English.POS;
+import edu.uci.arcastro.English.SentencePattern;
+import edu.uci.arcastro.English.Word;
 
 import java.util.*;
 import java.io.*;
@@ -10,6 +12,8 @@ public class Patterns {
 	public static List<int[]> fiveSyllables = new ArrayList<int[]>();
 	public static List<int[]> sevenSyllables = new ArrayList<int[]>();
 	public static List<HaikuPattern> grammarPatterns = new ArrayList<HaikuPattern>();
+    public static HashMap<SentencePattern, Integer> sentencePatterns = new HashMap<SentencePattern, Integer>();
+    public static HashMap<Word, Integer> startingWords = new HashMap<Word, Integer>();
 	
 	public static void LoadFiveSyllables(String FileName) throws FileNotFoundException{
 		Scanner reader = new Scanner(new File(FileName));

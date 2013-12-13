@@ -1,6 +1,7 @@
 package edu.uci.arcastro;
 
 import edu.uci.arcastro.English.POS;
+import edu.uci.arcastro.English.SentencePattern;
 import edu.uci.arcastro.English.Word;
 
 import java.io.File;
@@ -20,6 +21,8 @@ public class Dictionary
 			new HashMap<POS, ArrayList<Word>>();
 	public static HashMap<Integer, ArrayList<Word>> SentimentDictionary = 
 			new HashMap<Integer, ArrayList<Word>>();
+    public static HashMap<Integer, ArrayList<SentencePattern>> SentencePatternDictionary =
+            new HashMap<Integer, ArrayList<SentencePattern>>();
 	
 	private static Word getWord(String spelling)
 	{
