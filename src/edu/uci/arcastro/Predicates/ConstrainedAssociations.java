@@ -1,4 +1,7 @@
-package edu.uci.arcastro;
+package edu.uci.arcastro.Predicates;
+
+import edu.uci.arcastro.Predicate;
+import edu.uci.arcastro.Word;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -37,7 +40,7 @@ public class ConstrainedAssociations {
 
     private boolean forall(List<Predicate> predicates, Word w) {
         for (Predicate p : predicates) {
-            if (!p.fulfills(w)) {
+            if (!p.isFulfilledBy(w)) {
                 return false;
             }
         }

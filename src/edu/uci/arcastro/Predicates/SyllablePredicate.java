@@ -1,4 +1,7 @@
-package edu.uci.arcastro;
+package edu.uci.arcastro.Predicates;
+
+import edu.uci.arcastro.Predicate;
+import edu.uci.arcastro.Word;
 
 public class SyllablePredicate implements Predicate {
     private final int syllableCount;
@@ -7,7 +10,7 @@ public class SyllablePredicate implements Predicate {
         this.syllableCount = syllableCount;
     }
 
-    public boolean fulfills(Word w) {
+    public boolean isFulfilledBy(Word w) {
         return w.syllables() == this.syllableCount;
     }
 }
