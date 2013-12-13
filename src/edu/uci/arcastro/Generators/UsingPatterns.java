@@ -5,15 +5,16 @@ import java.util.EnumSet;
 import java.util.List;
 
 import edu.uci.arcastro.*;
+import edu.uci.arcastro.Exceptions.ImpossibleException;
 import edu.uci.arcastro.English.POS;
 import edu.uci.arcastro.English.Word;
 import edu.uci.arcastro.Exceptions.ImpossibleException;
 import edu.uci.arcastro.English.HaikuPattern;
 
-public class UsingPatterns implements HaikuGenerator {
+public class UsingPatterns extends HaikuGenerator {
 
 	@Override
-	public String Generate(Word[] seeds) {
+	public String Generate(List<Seed> seeds) {
         for(int i = 0; i < 10; i++)
         {
             try
@@ -42,17 +43,6 @@ public class UsingPatterns implements HaikuGenerator {
         }
         return "Could not generate Haiku after 10 tries. Giving up.";
 	}
-
-    private int[] ChooseSyllablePattern(List<int[]> SyllablePatterns, int WordCount) throws ImpossibleException {
-        ArrayList<int[]> candidate = new ArrayList<int[]>();
-        for(int[] SyllablePattern : SyllablePatterns)
-            if(SyllablePattern.length == WordCount)
-                candidate.add(SyllablePattern);
-        if(candidate.size() == 0)
-            throw new ImpossibleException(String.format(
-                "Could not find any syllable patterns with %d words.", WordCount));
-        return Query.ChooseRandom(candidate);
-    }
 
     // [1, 4]
     // [Noun, Verb]

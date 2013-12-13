@@ -1,12 +1,10 @@
 package edu.uci.arcastro.Generators;
 
-import edu.uci.arcastro.*;
-import edu.uci.arcastro.Dictionary;
 import edu.uci.arcastro.English.HaikuPattern;
 import edu.uci.arcastro.English.POS;
-import edu.uci.arcastro.English.SentencePattern;
 import edu.uci.arcastro.English.Word;
 import edu.uci.arcastro.Exceptions.ImpossibleException;
+import edu.uci.arcastro.*;
 import edu.uci.arcastro.Predicates.AnyPOSPredicate;
 import edu.uci.arcastro.Predicates.ConstrainedAssociations;
 import edu.uci.arcastro.Predicates.Predicate;
@@ -18,26 +16,44 @@ import java.util.*;
 /**
  * Created by Alan Castro on 12/12/13.
  */
-public class UsingMarkovChainAndSentencePattern implements HaikuGenerator {
+public class UsingSeededMarkovChainAndPattern extends HaikuGenerator {
 
     @Override
-    public String Generate(Word[] seeds) {
-        ArrayList<SentencePattern> candidates = new ArrayList<SentencePattern>();
-        for(SentencePattern sp : Dictionary.SentencePatternDictionary.get(4))
-            if(sp.getFrequency() > 1)
-                candidates.add(sp);
-        return StringUtils.join(candidates, "\n");
-    }
+    public String Generate(List<Seed> seeds) {
+        for(int i = 0; i < 100; i++)
+        {
+            try
+            {
+                HaikuPattern p = Query.ChooseRandom(Patterns.grammarPatterns);
+                ArrayList<EnumSet<POS>> FirstLinePOSPattern = p.firstLine;
+                ArrayList<EnumSet<POS>> SecondLinePOSPattern = p.secondLine;
+                ArrayList<EnumSet<POS>> ThirdLinePOSPattern = p.thirdLine;
 
-    private int[] ChooseSyllablePattern(List<int[]> SyllablePatterns, int WordCount) throws ImpossibleException {
-        ArrayList<int[]> candidate = new ArrayList<int[]>();
-        for(int[] SyllablePattern : SyllablePatterns)
-            if(SyllablePattern.length == WordCount)
-                candidate.add(SyllablePattern);
-        if(candidate.size() == 0)
-            throw new ImpossibleException(String.format(
-                    "Could not find any syllable patterns with %d words.", WordCount));
-        return Query.ChooseRandom(candidate);
+                int[] FirstLineSyllablePattern = ChooseSyllablePattern(Patterns.fiveSyllables, FirstLinePOSPattern.size());
+                int[] SecondLineSyllablePattern = ChooseSyllablePattern(Patterns.sevenSyllables, SecondLinePOSPattern.size());
+                int[] ThirdLineSyllablePattern = ChooseSyllablePattern(Patterns.fiveSyllables, ThirdLinePOSPattern.size());
+
+                StringBuilder Haiku = new StringBuilder();
+                List<Word> line = GenerateLine(FirstLineSyllablePattern, FirstLinePOSPattern, seeds.get(0).word);
+                Word prevWord = line.get(line.size() - 1);
+                Haiku.append(StringUtils.join(line, " "));
+                Haiku.append('\n');
+
+                line = GenerateLine(SecondLineSyllablePattern, SecondLinePOSPattern, prevWord);
+                prevWord = line.get(line.size() - 1);
+                Haiku.append(StringUtils.join(line, " "));
+                Haiku.append('\n');
+
+                line = GenerateLine(ThirdLineSyllablePattern, ThirdLinePOSPattern, prevWord);
+                Haiku.append(StringUtils.join(line, " "));
+                Haiku.append('\n');
+                return Haiku.toString();
+            }
+            catch (ImpossibleException e){
+                System.out.println(e.getMessage());
+            }
+        }
+        return "Could not generate Haiku after 100 tries. Giving up.";
     }
 
     private List<Word> GenerateLine(int[] SyllablePattern, ArrayList<EnumSet<POS>> POSPattern, Word prevWord) throws ImpossibleException {
@@ -72,7 +88,7 @@ public class UsingMarkovChainAndSentencePattern implements HaikuGenerator {
             predicates.add(new SyllablePredicate(Syllables));
 
             ConstrainedAssociations c = new ConstrainedAssociations(PreviousWord, predicates);
-            Set<Map.Entry<Word, Integer>> choices = c.CollocatedAfter.entrySet();
+            Set<Map.Entry<Word, Double>> choices = c.CollocatedAfter.entrySet();
 
             return Query.ChooseWeightedRandom(choices);
         }

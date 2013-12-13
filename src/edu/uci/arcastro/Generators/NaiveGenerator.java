@@ -1,14 +1,17 @@
 package edu.uci.arcastro.Generators;
 
+import edu.uci.arcastro.*;
 import edu.uci.arcastro.Dictionary;
 import edu.uci.arcastro.Patterns;
 import edu.uci.arcastro.Query;
 import edu.uci.arcastro.English.Word;
 
-public class NaiveGenerator implements HaikuGenerator {
+import java.util.List;
+
+public class NaiveGenerator extends HaikuGenerator {
 
 	@Override
-	public String Generate(Word[] seeds) 
+	public String Generate(List<Seed> seeds)
 	{
 		int[] FirstLineSyllablePattern = Query.ChooseRandom(Patterns.fiveSyllables);
 		int[] SecondLineSyllablePattern = Query.ChooseRandom(Patterns.sevenSyllables);
