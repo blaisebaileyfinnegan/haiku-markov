@@ -12,10 +12,10 @@ import java.util.*;
 /**
  * Created by Alan Castro on 12/12/13.
  */
-public class UsingMarkovChainAndPattern implements HaikuGenerator {
+public class UsingMarkovChainAndPattern extends HaikuGenerator {
 
     @Override
-    public String Generate(Word[] seeds) {
+    public String Generate(List<Seed> seeds) {
         for(int i = 0; i < 100; i++)
         {
             try
@@ -51,17 +51,6 @@ public class UsingMarkovChainAndPattern implements HaikuGenerator {
         return "Could not generate Haiku after 10 tries. Giving up.";
     }
 
-    private int[] ChooseSyllablePattern(List<int[]> SyllablePatterns, int WordCount) throws ImpossibleException {
-        ArrayList<int[]> candidate = new ArrayList<int[]>();
-        for(int[] SyllablePattern : SyllablePatterns)
-            if(SyllablePattern.length == WordCount)
-                candidate.add(SyllablePattern);
-        if(candidate.size() == 0)
-            throw new ImpossibleException(String.format(
-                    "Could not find any syllable patterns with %d words.", WordCount));
-        return Query.ChooseRandom(candidate);
-    }
-
     private List<Word> GenerateLine(int[] SyllablePattern, ArrayList<EnumSet<POS>> POSPattern, Word prevWord) throws ImpossibleException {
         List<Word> line = new ArrayList<Word>();
         Word word = prevWord;
@@ -95,7 +84,7 @@ public class UsingMarkovChainAndPattern implements HaikuGenerator {
             predicates.add(new SyllablePredicate(Syllables));
 
             ConstrainedAssociations c = new ConstrainedAssociations(PreviousWord, predicates);
-            Set<Map.Entry<Word, Integer>> choices = c.CollocatedAfter.entrySet();
+            Set<Map.Entry<Word, Double>> choices = c.CollocatedAfter.entrySet();
 
             return Query.ChooseWeightedRandom(choices);
         }

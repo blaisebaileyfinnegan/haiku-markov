@@ -29,19 +29,19 @@ public class Query
 		return Items.get(r.nextInt(Items.size()));
 	}
 
-    public static <T> T ChooseWeightedRandom(Set<Map.Entry<T, Integer>> Items) throws ImpossibleException
+    public static <T> T ChooseWeightedRandom(Set<Map.Entry<T, Double>> Items) throws ImpossibleException
     {
         if (Items.isEmpty()) {
             throw new ImpossibleException("Can't choose an entry from an empty set");
         }
 
-        int totalFrequency = 0;
-        for (Map.Entry<T, Integer> e : Items) {
+        double totalFrequency = 0;
+        for (Map.Entry<T, Double> e : Items) {
             totalFrequency += e.getValue();
         }
 
         double random = Math.random() * totalFrequency;
-        for (Map.Entry<T, Integer> e : Items) {
+        for (Map.Entry<T, Double> e : Items) {
             random -= e.getValue();
             if (random < 0.0d) {
                 return e.getKey();

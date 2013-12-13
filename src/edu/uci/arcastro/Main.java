@@ -4,10 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.Scanner;
 
-import edu.uci.arcastro.Generators.HaikuGenerator;
-import edu.uci.arcastro.Generators.NaiveGenerator;
-import edu.uci.arcastro.Generators.UsingMarkovChainAndPattern;
-import edu.uci.arcastro.Generators.UsingPatterns;
+import edu.uci.arcastro.Generators.*;
 
 public class Main {
 
@@ -19,20 +16,26 @@ public class Main {
 		HaikuGenerator g = new UsingPatterns();
 		Scanner s = new Scanner(System.in);
 
+        System.out.println("Please enter a word:");
 		while(s.hasNextLine())
 		{
-            s.nextLine();
-
-            UsingMarkovChainAndPattern generator = new UsingMarkovChainAndPattern();
-            String haiku = generator.Generate(null);
-            System.out.println(haiku);
-            /**
-			String word_spelling = s.nextLine().toUpperCase();
+            String word_spelling = s.nextLine().toUpperCase();
 			if(!Dictionary.Words.containsKey(word_spelling))
 			{
 				System.out.println("No word with that exact spelling was found.");
 				continue;
 			}
+
+            Word w = Dictionary.Words.get(word_spelling);
+            List<Seed> seeds = new ArrayList<Seed>();
+            seeds.add(new Seed(w, 1.0));
+
+            HaikuGenerator generator = new UsingMarkovAndPatternsAndSentenceAssociationsAndWAN();
+            String haiku = generator.Generate(seeds);
+            System.out.println(haiku);
+
+            System.out.println("Please enter a word:");
+            /**
 
 			Word inputWord = Dictionary.Words.get(word_spelling);
 
