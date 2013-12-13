@@ -79,7 +79,7 @@ public class UsingPatterns implements HaikuGenerator {
 				candidates.add(w);
         if(candidates.size() == 0)
             throw new ImpossibleException(
-                    String.format("Could not find any word with $i syllables and the following parts of speech: %s", Syllables, POS.toString()));
+                    String.format("Could not find any word with %d syllables and the following parts of speech: %s", Syllables, POS.toString()));
 		return Query.ChooseRandom(candidates);
 	}
 }

@@ -5,6 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 
 import edu.uci.arcastro.Exceptions.ImpossibleException;
+import edu.uci.arcastro.Predicates.*;
 
 import java.util.*;
 
