@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import edu.uci.arcastro.Generators.HaikuGenerator;
 import edu.uci.arcastro.Generators.NaiveGenerator;
+import edu.uci.arcastro.Generators.UsingMarkovChainAndPattern;
 import edu.uci.arcastro.Generators.UsingPatterns;
 
 public class Main {
@@ -17,8 +18,15 @@ public class Main {
 		
 		HaikuGenerator g = new UsingPatterns();
 		Scanner s = new Scanner(System.in);
+
 		while(s.hasNextLine())
 		{
+            s.nextLine();
+
+            UsingMarkovChainAndPattern generator = new UsingMarkovChainAndPattern();
+            String haiku = generator.Generate(null);
+            System.out.println(haiku);
+            /**
 			String word_spelling = s.nextLine().toUpperCase();
 			if(!Dictionary.Words.containsKey(word_spelling))
 			{
@@ -43,6 +51,7 @@ public class Main {
 			for (Word w : words) {
 				System.out.println(w.spelling());
 			}
+             **/
 		}
 		s.close();
 	}

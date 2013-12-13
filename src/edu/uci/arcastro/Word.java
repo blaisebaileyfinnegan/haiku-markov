@@ -69,6 +69,11 @@ public class Word
 		return this.totalWanResponseCount != Word.NO_RESPONSES;
 	}
 
+    @Override
+    public String toString() {
+        return this.spelling;
+    }
+
 	public void setWanResponseCount(int responses) {
 		this.totalWanResponseCount = responses;
 	}

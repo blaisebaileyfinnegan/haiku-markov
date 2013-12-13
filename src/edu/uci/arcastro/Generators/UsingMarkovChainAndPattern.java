@@ -1,12 +1,12 @@
 package edu.uci.arcastro.Generators;
 
 import edu.uci.arcastro.*;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.text.WordUtils;
+
 import edu.uci.arcastro.Exceptions.ImpossibleException;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * Created by Alan Castro on 12/12/13.
@@ -15,7 +15,7 @@ public class UsingMarkovChainAndPattern implements HaikuGenerator {
 
     @Override
     public String Generate(Word[] seeds) {
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 100; i++)
         {
             try
             {
@@ -29,15 +29,23 @@ public class UsingMarkovChainAndPattern implements HaikuGenerator {
                 int[] ThirdLineSyllablePattern = ChooseSyllablePattern(Patterns.fiveSyllables, ThirdLinePOSPattern.size());
 
                 StringBuilder Haiku = new StringBuilder();
-                Haiku.append(GenerateLine(FirstLineSyllablePattern, FirstLinePOSPattern));
+                List<Word> line = GenerateLine(FirstLineSyllablePattern, FirstLinePOSPattern, null);
+                Word prevWord = line.get(line.size() - 1);
+                Haiku.append(StringUtils.join(line, " "));
                 Haiku.append('\n');
-                Haiku.append(GenerateLine(SecondLineSyllablePattern, SecondLinePOSPattern));
+
+                line = GenerateLine(SecondLineSyllablePattern, SecondLinePOSPattern, prevWord);
+                prevWord = line.get(line.size() - 1);
+                Haiku.append(StringUtils.join(line, " "));
                 Haiku.append('\n');
-                Haiku.append(GenerateLine(ThirdLineSyllablePattern, ThirdLinePOSPattern));
+
+                line = GenerateLine(ThirdLineSyllablePattern, ThirdLinePOSPattern, prevWord);
+                Haiku.append(StringUtils.join(line, " "));
                 Haiku.append('\n');
                 return Haiku.toString();
             }
-            catch (ImpossibleException e){}
+            catch (ImpossibleException e){
+            }
         }
         return "Could not generate Haiku after 10 tries. Giving up.";
     }
@@ -53,23 +61,43 @@ public class UsingMarkovChainAndPattern implements HaikuGenerator {
         return Query.ChooseRandom(candidate);
     }
 
-    private String GenerateLine(int[] SyllablePattern, ArrayList<EnumSet<POS>> POSPattern) throws ImpossibleException {
-        StringBuilder line = new StringBuilder();
-        Word word = null;
+    private List<Word> GenerateLine(int[] SyllablePattern, ArrayList<EnumSet<POS>> POSPattern, Word prevWord) throws ImpossibleException {
+        List<Word> line = new ArrayList<Word>();
+        Word word = prevWord;
         for(int i = 0; i < SyllablePattern.length; i++)
         {
             int Syllables = SyllablePattern[i];
             EnumSet<POS> POS = POSPattern.get(i);
 
-            if(i > 0) line.append(' ');
             word = GenerateWord(Syllables, POS, word);
-            line.append(word.spelling);
+            line.add(word);
         }
-        return line.toString();
+
+        return line;
     }
 
+    /**
+     * Previous word may be null, in which case pick a random word which fulfills the POS and syllable count
+     *
+     * @param Syllables
+     * @param POS
+     * @param PreviousWord
+     * @return
+     * @throws ImpossibleException
+     */
     private Word GenerateWord(int Syllables, EnumSet<POS> POS, Word PreviousWord) throws ImpossibleException {
+        if (PreviousWord == null) {
+            return UsingPatterns.GenerateWord(Syllables, POS);
+        } else {
+            ArrayList<Predicate> predicates = new ArrayList<Predicate>();
+            predicates.add(new AnyPOSPredicate(POS));
+            predicates.add(new SyllablePredicate(Syllables));
 
-        // Can you do this michael?
+            ConstrainedAssociations c = new ConstrainedAssociations(PreviousWord, predicates);
+            Set<Map.Entry<Word, Integer>> choices = c.CollocatedAfter.entrySet();
+
+            return Query.ChooseWeightedRandom(choices);
+        }
     }
+
 }
