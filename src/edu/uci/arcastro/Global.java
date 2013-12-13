@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 public class Global {
 	
 	//Initialize all data from files
-	public static void Initialize() throws FileNotFoundException
+	public static void Initialize(String[] args) throws FileNotFoundException
 	{
 		Patterns.LoadFiveSyllables("5 Syllables.txt");
 		Patterns.LoadSevenSyllables("7 Syllables.txt");
@@ -13,7 +13,11 @@ public class Global {
 
 		Dictionary.LoadSyllableDictionary("syllables.txt");
 		Dictionary.LoadPOSDictionary("part-of-speech_UPDATED.txt");
-		Parser.TrainWithCorpus("big.txt");
+
+        for (String s : args) {
+            Parser.TrainWithCorpus(s);
+        }
+
         Parser.TrainWithWAN("wan/wan-processed.txt");
 	}
 
