@@ -14,7 +14,7 @@ import java.util.*;
 /**
  * Created by Alan Castro on 12/12/13.
  */
-public class UsingMarkovChainAndPattern extends HaikuGenerator {
+public class UsingMarkovChainAndHaikuPattern extends HaikuGenerator {
 
     @Override
     public String Generate(List<Seed> seeds) {

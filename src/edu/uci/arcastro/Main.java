@@ -8,7 +8,6 @@ import java.util.Scanner;
 import edu.uci.arcastro.Generators.*;
 import edu.uci.arcastro.English.Word;
 import edu.uci.arcastro.Generators.HaikuGenerator;
-import edu.uci.arcastro.Generators.UsingSeededMarkovChainAndPattern;
 import edu.uci.arcastro.Generators.UsingPatterns;
 
 public class Main {
