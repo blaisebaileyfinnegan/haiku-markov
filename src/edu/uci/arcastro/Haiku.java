@@ -1,5 +1,6 @@
 package edu.uci.arcastro;
 
+import edu.uci.arcastro.English.Word;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;

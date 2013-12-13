@@ -1,5 +1,7 @@
 package edu.uci.arcastro;
 
+import edu.uci.arcastro.English.Word;
+
 public class Seed {
     public Word word;
     public double weight;

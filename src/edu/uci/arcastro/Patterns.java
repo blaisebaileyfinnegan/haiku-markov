@@ -1,12 +1,15 @@
 package edu.uci.arcastro;
 
+import edu.uci.arcastro.English.HaikuPattern;
+import edu.uci.arcastro.English.POS;
+
 import java.util.*;
 import java.io.*;
 
 public class Patterns {
 	public static List<int[]> fiveSyllables = new ArrayList<int[]>();
 	public static List<int[]> sevenSyllables = new ArrayList<int[]>();
-	public static List<SentencePattern> grammarPatterns = new ArrayList<SentencePattern>();
+	public static List<HaikuPattern> grammarPatterns = new ArrayList<HaikuPattern>();
 	
 	public static void LoadFiveSyllables(String FileName) throws FileNotFoundException{
 		Scanner reader = new Scanner(new File(FileName));
@@ -46,13 +49,13 @@ public class Patterns {
 		reader.close();
 	}
 	
-	public static void LoadPatterns(String FileName) throws FileNotFoundException{
+	public static void LoadHaikuPatterns(String FileName) throws FileNotFoundException{
 		Scanner reader = new Scanner(new File(FileName));
 		
 		while(reader.hasNextLine())
 		{
 			EnumSet<POS> set = EnumSet.noneOf(POS.class);
-			SentencePattern newPttrn = new SentencePattern();
+			HaikuPattern newPttrn = new HaikuPattern();
 			int numLine = 0;
 			
 			while(numLine < 3 && reader.hasNextLine())

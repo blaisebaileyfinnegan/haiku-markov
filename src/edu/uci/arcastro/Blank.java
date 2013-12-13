@@ -1,5 +1,7 @@
 package edu.uci.arcastro;
 
+import edu.uci.arcastro.English.POS;
+
 import java.util.EnumSet;
 
 public class Blank {

@@ -2,8 +2,10 @@ package edu.uci.arcastro.Generators;
 
 import com.sun.javaws.exceptions.InvalidArgumentException;
 import edu.uci.arcastro.*;
+import edu.uci.arcastro.English.POS;
 import edu.uci.arcastro.Exceptions.ImpossibleException;
 import org.apache.commons.lang3.StringUtils;
+import edu.uci.arcastro.English.Word;
 
 import java.util.ArrayList;
 import java.util.EnumSet;

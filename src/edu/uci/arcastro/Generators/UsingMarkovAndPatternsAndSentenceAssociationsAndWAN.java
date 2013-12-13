@@ -1,11 +1,12 @@
 package edu.uci.arcastro.Generators;
 
 import edu.uci.arcastro.*;
+import edu.uci.arcastro.English.HaikuPattern;
+import edu.uci.arcastro.English.POS;
+import edu.uci.arcastro.English.SentencePattern;
+import edu.uci.arcastro.English.Word;
 import edu.uci.arcastro.Exceptions.ImpossibleException;
-import edu.uci.arcastro.Predicates.AnyPOSPredicate;
-import edu.uci.arcastro.Predicates.ConstrainedAssociations;
-import edu.uci.arcastro.Predicates.POSPredicate;
-import edu.uci.arcastro.Predicates.SyllablePredicate;
+import edu.uci.arcastro.Predicates.*;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
@@ -16,7 +17,7 @@ public class UsingMarkovAndPatternsAndSentenceAssociationsAndWAN extends HaikuGe
     public String Generate(List<Seed> seeds) {
         for (int i = 0; i < 100; i++) {
             try {
-                SentencePattern p = Query.ChooseRandom(Patterns.grammarPatterns);
+                HaikuPattern p = Query.ChooseRandom(Patterns.grammarPatterns);
                 ArrayList<EnumSet<POS>> FirstLinePOSPattern = p.firstLine;
                 ArrayList<EnumSet<POS>> SecondLinePOSPattern = p.secondLine;
                 ArrayList<EnumSet<POS>> ThirdLinePOSPattern = p.thirdLine;

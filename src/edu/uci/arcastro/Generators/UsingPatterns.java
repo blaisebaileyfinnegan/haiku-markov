@@ -6,6 +6,10 @@ import java.util.List;
 
 import edu.uci.arcastro.*;
 import edu.uci.arcastro.Exceptions.ImpossibleException;
+import edu.uci.arcastro.English.POS;
+import edu.uci.arcastro.English.Word;
+import edu.uci.arcastro.Exceptions.ImpossibleException;
+import edu.uci.arcastro.English.HaikuPattern;
 
 public class UsingPatterns extends HaikuGenerator {
 
@@ -15,7 +19,7 @@ public class UsingPatterns extends HaikuGenerator {
         {
             try
             {
-                SentencePattern p = Query.ChooseRandom(Patterns.grammarPatterns);
+                HaikuPattern p = Query.ChooseRandom(Patterns.grammarPatterns);
                 // [Noun, Verb]
                 ArrayList<EnumSet<POS>> FirstLinePOSPattern = p.firstLine;
                 ArrayList<EnumSet<POS>> SecondLinePOSPattern = p.secondLine;

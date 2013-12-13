@@ -1,5 +1,7 @@
 package edu.uci.arcastro;
 
+import edu.uci.arcastro.English.Word;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;

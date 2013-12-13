@@ -1,4 +1,4 @@
-package edu.uci.arcastro;
+package edu.uci.arcastro.English;
 
 
 public enum POS

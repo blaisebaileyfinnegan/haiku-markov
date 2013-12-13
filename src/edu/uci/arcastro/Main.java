@@ -1,10 +1,15 @@
 package edu.uci.arcastro;
 
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import edu.uci.arcastro.Generators.*;
+import edu.uci.arcastro.English.Word;
+import edu.uci.arcastro.Generators.HaikuGenerator;
+import edu.uci.arcastro.Generators.UsingSeededMarkovChainAndPattern;
+import edu.uci.arcastro.Generators.UsingPatterns;
 
 public class Main {
 

@@ -1,5 +1,7 @@
 package edu.uci.arcastro;
 
+import edu.uci.arcastro.English.Word;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

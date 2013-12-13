@@ -1,8 +1,9 @@
 package edu.uci.arcastro.Predicates;
 
-import edu.uci.arcastro.Predicate;
 import edu.uci.arcastro.Utility;
-import edu.uci.arcastro.Word;
+
+import edu.uci.arcastro.Utility;
+import edu.uci.arcastro.English.Word;
 
 import javax.rmi.CORBA.Util;
 import java.util.*;
