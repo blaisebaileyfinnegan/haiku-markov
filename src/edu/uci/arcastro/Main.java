@@ -12,7 +12,7 @@ public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		System.out.print("Reading dictionaries from file...");
-		Global.Initialize();
+		Global.Initialize(args);
 		System.out.println("Done");
 		
 		HaikuGenerator g = new UsingPatterns();
