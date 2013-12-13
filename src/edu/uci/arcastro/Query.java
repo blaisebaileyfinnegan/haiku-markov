@@ -52,9 +52,9 @@ public class Query
         throw new ImpossibleException("Weighted random picker didn't work");
     }
 
-    public static <T> T ChooseWeightedRandom(Set<T> Items, Weigher<T> weigher) throws ImpossibleException
+    public static <T> T ChooseWeightedRandom(Iterable<T> Items, Weigher<T> weigher) throws ImpossibleException
     {
-        if (Items.isEmpty()) {
+        if (!Items.iterator().hasNext()) {
             throw new ImpossibleException("Can't choose an entry from an empty set");
         }
 

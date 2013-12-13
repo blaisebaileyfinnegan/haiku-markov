@@ -102,6 +102,7 @@ public class Dictionary
 		{
 			String line = s.nextLine();
 			String[] parts = line.split(" ");
+            if(parts.length != 2) continue;
 			String word_spelling = parts[0];
 			int syllables = Integer.parseInt(parts[1]);
 			

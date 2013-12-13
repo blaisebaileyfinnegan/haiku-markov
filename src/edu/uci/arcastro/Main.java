@@ -2,13 +2,11 @@ package edu.uci.arcastro;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import edu.uci.arcastro.Generators.*;
 import edu.uci.arcastro.English.Word;
-import edu.uci.arcastro.Generators.HaikuGenerator;
-import edu.uci.arcastro.Generators.UsingPatterns;
+import org.apache.commons.lang3.StringUtils;
 
 public class Main {
 
@@ -16,29 +14,23 @@ public class Main {
 		System.out.print("Reading dictionaries from file...");
 		Global.Initialize(args);
 		System.out.println("Done");
-		
-		HaikuGenerator g = new UsingPatterns();
+
+        UsingProbabilityDistributionAndFrequentSentecePatterns g = new UsingProbabilityDistributionAndFrequentSentecePatterns();
 		Scanner s = new Scanner(System.in);
 
         System.out.println("Please enter a word:");
 		while(s.hasNextLine())
 		{
-            String word_spelling = s.nextLine().toUpperCase();
-			if(!Dictionary.Words.containsKey(word_spelling))
-			{
-				System.out.println("No word with that exact spelling was found.");
-				continue;
-			}
-
-            Word w = Dictionary.Words.get(word_spelling);
-            List<Seed> seeds = new ArrayList<Seed>();
-            seeds.add(new Seed(w, 1.0));
-
-            HaikuGenerator generator = new UsingMarkovAndPatternsAndSentenceAssociationsAndWAN();
-            String haiku = generator.Generate(seeds);
+            String[] word_spellings = StringUtils.split(s.nextLine().toUpperCase(), ' ');
+            ArrayList<Word> seeds = new ArrayList<Word>();
+			for(String spelling : word_spellings)
+            {
+                if(Dictionary.Words.containsKey(spelling))
+                    seeds.add(Dictionary.Words.get(spelling));
+            }
+            String haiku = g.Generate(seeds);
             System.out.println(haiku);
 
-            System.out.println("Please enter a word:");
             /**
 
 			Word inputWord = Dictionary.Words.get(word_spelling);

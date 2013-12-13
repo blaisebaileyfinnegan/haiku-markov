@@ -13,6 +13,7 @@ public class Global {
 
 		Dictionary.LoadSyllableDictionary("syllables.txt");
 		Dictionary.LoadPOSDictionary("part-of-speech_UPDATED.txt");
+        Dictionary.LoadSentimentDictionary("sentiment.txt");
 
         for (String s : args) {
             Parser.TrainWithCorpus(s);

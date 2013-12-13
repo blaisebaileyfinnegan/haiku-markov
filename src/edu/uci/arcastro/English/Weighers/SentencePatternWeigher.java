@@ -10,6 +10,6 @@ public class SentencePatternWeigher implements Weigher<SentencePattern>
     @Override
     public double getWeight(SentencePattern item)
     {
-        return item.avg_applicability();
+        return item.avg_applicability() * Math.pow(item.getFrequency(), 4);
     }
 }
