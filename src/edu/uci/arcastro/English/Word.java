@@ -1,4 +1,4 @@
-package edu.uci.arcastro;
+package edu.uci.arcastro.English;
 
 import java.util.ArrayList;
 import java.util.EnumSet;

@@ -3,7 +3,7 @@ package edu.uci.arcastro.Generators;
 import edu.uci.arcastro.Dictionary;
 import edu.uci.arcastro.Patterns;
 import edu.uci.arcastro.Query;
-import edu.uci.arcastro.Word;
+import edu.uci.arcastro.English.Word;
 
 public class NaiveGenerator implements HaikuGenerator {
 

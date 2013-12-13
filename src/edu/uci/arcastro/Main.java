@@ -1,12 +1,11 @@
 package edu.uci.arcastro;
 
 import java.io.FileNotFoundException;
-import java.util.*;
 import java.util.Scanner;
 
+import edu.uci.arcastro.English.Word;
 import edu.uci.arcastro.Generators.HaikuGenerator;
-import edu.uci.arcastro.Generators.NaiveGenerator;
-import edu.uci.arcastro.Generators.UsingMarkovChainAndPattern;
+import edu.uci.arcastro.Generators.UsingSeededMarkovChainAndPattern;
 import edu.uci.arcastro.Generators.UsingPatterns;
 
 public class Main {
@@ -21,10 +20,16 @@ public class Main {
 
 		while(s.hasNextLine())
 		{
-            s.nextLine();
+            String spelling = s.nextLine();
+            if(!Dictionary.Words.containsKey(spelling))
+            {
+                System.out.println("Seed word not found in dictionary");
+                continue;
+            }
+            Word seed = Dictionary.Words.get(spelling);
 
-            UsingMarkovChainAndPattern generator = new UsingMarkovChainAndPattern();
-            String haiku = generator.Generate(null);
+            HaikuGenerator generator = new UsingSeededMarkovChainAndPattern();
+            String haiku = generator.Generate(new Word[]{seed});
             System.out.println(haiku);
             /**
 			String word_spelling = s.nextLine().toUpperCase();

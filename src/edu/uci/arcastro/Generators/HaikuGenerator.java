@@ -1,7 +1,6 @@
 package edu.uci.arcastro.Generators;
 
-import edu.uci.arcastro.Exceptions.ImpossibleException;
-import edu.uci.arcastro.Word;
+import edu.uci.arcastro.English.Word;
 
 public interface HaikuGenerator 
 {

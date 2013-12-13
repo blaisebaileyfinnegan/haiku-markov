@@ -1,5 +1,8 @@
 package edu.uci.arcastro;
 
+import edu.uci.arcastro.English.POS;
+import edu.uci.arcastro.English.Word;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -9,11 +12,11 @@ import java.util.Scanner;
 
 public class Dictionary 
 {	
-	public static HashMap<String, Word> Words = 
+	public static HashMap<String, Word> Words =
 			new HashMap<String, Word>();
 	public static HashMap<Integer, ArrayList<Word>> SyllableDictionary = 
 			new HashMap<Integer, ArrayList<Word>>();
-	public static HashMap<POS, ArrayList<Word>> PartOfSpeechDictionary = 
+	public static HashMap<POS, ArrayList<Word>> PartOfSpeechDictionary =
 			new HashMap<POS, ArrayList<Word>>();
 	public static HashMap<Integer, ArrayList<Word>> SentimentDictionary = 
 			new HashMap<Integer, ArrayList<Word>>();

@@ -9,11 +9,12 @@ public class Global {
 	{
 		Patterns.LoadFiveSyllables("5 Syllables.txt");
 		Patterns.LoadSevenSyllables("7 Syllables.txt");
-		Patterns.LoadPatterns("patterns.txt");
+		Patterns.LoadHaikuPatterns("patterns.txt");
 
 		Dictionary.LoadSyllableDictionary("syllables.txt");
 		Dictionary.LoadPOSDictionary("part-of-speech_UPDATED.txt");
 		Parser.TrainWithCorpus("big.txt");
+        Parser.TrainWithCorpus("corpus/giant-corpus.txt");
         Parser.TrainWithWAN("wan/wan-processed.txt");
 	}
 

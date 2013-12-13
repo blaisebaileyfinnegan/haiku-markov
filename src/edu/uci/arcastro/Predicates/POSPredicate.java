@@ -1,10 +1,8 @@
 package edu.uci.arcastro.Predicates;
 
-import edu.uci.arcastro.POS;
-import edu.uci.arcastro.Predicate;
-import edu.uci.arcastro.Word;
+import edu.uci.arcastro.English.POS;
+import edu.uci.arcastro.English.Word;
 
-import java.util.Collections;
 import java.util.EnumSet;
 
 /**

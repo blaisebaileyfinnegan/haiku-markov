@@ -1,7 +1,6 @@
 package edu.uci.arcastro.Predicates;
 
-import edu.uci.arcastro.Predicate;
-import edu.uci.arcastro.Word;
+import edu.uci.arcastro.English.Word;
 
 import java.util.*;
 import java.util.Map.Entry;
