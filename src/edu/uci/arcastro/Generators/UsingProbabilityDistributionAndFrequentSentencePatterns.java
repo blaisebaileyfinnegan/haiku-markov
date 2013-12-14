@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * Created by Alan Castro on 12/12/13.
  */
-public class UsingProbabilityDistributionAndFrequentSentecePatterns {
+public class UsingProbabilityDistributionAndFrequentSentencePatterns {
 
     public String Generate(List<Word> seeds) {
         for(int i = 0; i < 100; i++)
